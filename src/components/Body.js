@@ -5,8 +5,11 @@ import Shimmer from "./Shimmer";
 
 
 const Body = () => {
-
+console.log("body renders")
     const [listOfRestaurant, setlistOfRestaurant] = useState([]);
+    const [filteredRestaurant, setfilteredRestaurant] = useState([]);
+
+    const [searchText,setsearchText]=useState("");
     useEffect(() => { fetchData() }, [])
 
     const fetchData = async () => {
@@ -15,24 +18,30 @@ const Body = () => {
         const json = await data.json();
         console.log(json);
         setlistOfRestaurant(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
+        setfilteredRestaurant(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
     };
 
     return listOfRestaurant.length === 0 ? <Shimmer /> : (
         <div className="body">
             <div className="filter">
                 <div className="search">
-                    <input type="text" className="search-box"/>
-                    <button>search</button>
+                    <input type="text" className="search-box" value={searchText} onChange={(e)=>{
+                        setsearchText(e.target.value);
+                    }}/>
+                    <button onClick={()=>{
+                        const filteredRestaurants=listOfRestaurant.filter((res)=>res.info.name.toLowerCase().includes(searchText.toLowerCase()));
+                        setfilteredRestaurant(filteredRestaurants);
+                    }}>search</button>
                 </div>
                 <button className="filter-btn" onClick={
                     () => {
                         let filteredList = listOfRestaurant.filter((res) => res.info.avgRating > 4);
-                        setlistOfRestaurant(filteredList);
+                        setfilteredRestaurant(filteredList);
                     }}>Top Rated Restaurants
                 </button>
             </div>
             <div className="restaurantContainer">
-                {listOfRestaurant.map(restaurant => <RestaurantCard key={restaurant.info.id} resData={restaurant} />)}
+                {filteredRestaurant.map(restaurant => <RestaurantCard key={restaurant.info.id} resData={restaurant} />)}
             </div>
         </div>
     );
