@@ -5,7 +5,6 @@ import Shimmer from "./Shimmer";
 
 
 const Body = () => {
-console.log("body renders")
     const [listOfRestaurant, setlistOfRestaurant] = useState([]);
     const [filteredRestaurant, setfilteredRestaurant] = useState([]);
 
