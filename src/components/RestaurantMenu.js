@@ -6,23 +6,6 @@ const RestaurantMenu = () => {
     const { resId } = useParams();
 
     const resInfo=useRestaurantMenu(resId);
-
-    // useEffect(() => {
-    //     fetchMenu();
-    // }, []);
-
-    // const fetchMenu = async () => {
-    //     const data = await fetch(MENU_URL + resId);
-    //     const json = await data.json();
-    //     console.log(json);
-    //     console.log(resId);
-    //     setresInfo(json.data);
-    //     console.log(json.data?.cards[2]?.card?.card?.info?.name);
-    //     console.log(json.data?.cards[2]?.card?.card?.info?.avgRating);
-    //     console.log(json.data?.cards[2]?.card?.card?.info?.costForTwoMessage);
-
-    // }
-
     if (!resInfo) return <Shimmer />;
 
     const {

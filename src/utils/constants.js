@@ -5,6 +5,6 @@ export const LOGO_URL="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQp
 //mobile api
 // export const MENU_URL="https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fmapi%2Fmenu%2Fpl%3Fpage-type%3DREGULAR_MENU%26complete-menu%3Dtrue%26lat%3D12.9351929%26lng%3D77.62448069999999%26restaurantId%3D";
 //desktop api
-//export const MENU_URL="https://corsproxy.org/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=23.022505&lng=72.5713621&restaurantId=";
+// export const MENU_URL="https://corsproxy.org/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=23.022505&lng=72.5713621&restaurantId=";
 
 
