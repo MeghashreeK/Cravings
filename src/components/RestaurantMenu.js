@@ -7,14 +7,14 @@ const RestaurantMenu = () => {
 
     const resInfo=useRestaurantMenu(resId);
     if (!resInfo) return <Shimmer />;
-
+    console.log(resInfo);
     const {
         name,
         avgRating,
         costForTwoMessage
     } = resInfo?.cards[2]?.card?.card?.info || {};
 
-    const { itemCards } = resInfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card || {};
+    const { itemCards } = resInfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card ||resInfo?.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1].card.card;
 
     return (
         <div>
