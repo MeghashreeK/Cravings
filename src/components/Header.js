@@ -2,17 +2,19 @@ import { useState,useEffect } from "react";
 import { LOGO_URL } from "../utils/constants";
 import {Link} from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import logo from "../images/logo-cravings.png";
+
 const Header = () => {
 let [btnName,setbtnName]=useState("Login");
 const onlineStatus=useOnlineStatus();
 
     return (
-        <div className="header">
+        <div className="flex justify-between items-center">
             <div className="logoContainer">
-                <img width="200" className="logo" src={LOGO_URL} alt="logo" />
+                <img width="200" className="logo" src={logo} alt="logo" />
             </div>
-            <div className="nav-items">
-                <ul>
+            <div className="flex">
+                <ul className="flex space-x-6 m-4">
                     <li>Online:{onlineStatus?"🟢":"🔴"}</li>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/about">About Us</Link></li>
