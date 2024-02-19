@@ -8,7 +8,8 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Shimmer from "./components/Shimmer";
-//import Grocery from "./components/Grocery";
+import Home from "./components/Home";
+import Cart from "./components/Cart";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const Grocery = lazy(() => import("./components/Grocery"));
@@ -28,6 +29,10 @@ const AppRouter = createBrowserRouter([
         children: [
             {
                 path: "/",
+                element: <Home />,
+            },
+            {
+                path: "/restaurants",
                 element: <Body />,
             },
             {
@@ -38,10 +43,9 @@ const AppRouter = createBrowserRouter([
                 path: "/contact",
                 element: <Contact />,
             },
-
             {
-                path: "/grocery",
-                element: <Suspense fallback={<Shimmer />}><Grocery /></Suspense>,
+                path: "/cart",
+                element: <Cart />,
             },
             {
                 path: "/restaurant/:resId",

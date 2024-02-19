@@ -2,8 +2,14 @@
 module.exports = {
   content: [ "./src/**/*.{html,js}",],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        Dancing:['Dancing Script'],
+        Montserrat:['Montserrat']
+      }
+    },
   },
   plugins: [],
+  
 }
 
