@@ -16,15 +16,14 @@ const Header = () => {
             </div>
             <div className="flex">
                 <ul className="flex space-x-6 m-4 text-orange-600 text-[18px] font-Montserrat pr-16">
-                    <li className={activeLink === "Home" ? "font-bold" : ""} onClick={() => handleNavLinkClick("Home")}><Link to="/" className={window.location.href==="http://localhost:1234/"? "font-bold" : ""}>Home</Link></li>
-                    <li className={activeLink === "restaurants" ? "font-bold" : ""} onClick={() => handleNavLinkClick("restaurants")}><Link to="/restaurants" className={window.location.href==="http://localhost:1234/restaurants"? "font-bold" : ""}>Restaurants</Link></li>
-                    <li className={activeLink === "about" ? "font-bold" : ""} onClick={() => handleNavLinkClick("about")}><Link to="/about" className={window.location.href==="http://localhost:1234/about"? "font-bold" : ""}>About Us</Link></li>
-                    <li className={activeLink === "contact" ? "font-bold" : ""} onClick={() => handleNavLinkClick("contact")}><Link to="/contact" className={window.location.href==="http://localhost:1234/contact"? "font-bold" : ""}>Contact Us</Link></li>
-                    <li className={activeLink === "cart" ? "font-bold" : ""} onClick={() => handleNavLinkClick("cart")}><Link to="/cart" className={window.location.href==="http://localhost:1234/cart"? "font-bold" : ""}>Cart</Link></li>
+                    <li className={activeLink === "Home" ? "font-bold" : ""} onClick={() => handleNavLinkClick("Home")}><Link to="/" className={`hover:font-bold ${window.location.href==="http://localhost:1234/"? "font-bold" : ""}`}>Home</Link></li>
+                    <li className={activeLink === "restaurants" ? "font-bold" : ""} onClick={() => handleNavLinkClick("restaurants")}><Link to="/restaurants" className={`hover:font-bold ${window.location.href==="http://localhost:1234/restaurants"? "font-bold" : ""}`}>Restaurants</Link></li>
+                    <li className={activeLink === "about" ? "font-bold" : ""} onClick={() => handleNavLinkClick("about")}><Link to="/about" className={`hover:font-bold ${window.location.href==="http://localhost:1234/about"? "font-bold" : ""}`}>About Us</Link></li>
+                    <li className={activeLink === "contact" ? "font-bold" : ""} onClick={() => handleNavLinkClick("contact")}><Link to="/contact" className={`hover:font-bold ${window.location.href==="http://localhost:1234/contact"? "font-bold" : ""}`}>Contact Us</Link></li>
+                    <li className={activeLink === "cart" ? "font-bold" : ""} onClick={() => handleNavLinkClick("cart")}><Link to="/cart" className={`hover:font-bold ${window.location.href==="http://localhost:1234/cart"? "font-bold" : ""}`}>Cart</Link></li>
                 </ul>
             </div>
         </div>
     );
 };
 export default Header;
-
