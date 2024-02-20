@@ -1,19 +1,14 @@
-import { useState, useEffect } from "react";
-import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
-import useOnlineStatus from "../utils/useOnlineStatus";
 import logo from "../images/logo-cravings.png";
-import cart from "../images/cart-cravings.png";
+import {useState} from "react";
+
 
 const Header = () => {
-    let [btnName, setbtnName] = useState("Login");
-    const onlineStatus = useOnlineStatus();
-    const [activeLink, setactiveLink] = useState([]);
+    const [activeLink, setActiveLink] = useState("");
 
     const handleNavLinkClick = (linkName) => {
-        setactiveLink(linkName);
-    }
-
+        setActiveLink(linkName);
+    };
     return (
         <div className="flex justify-between items-center shadow-lg sticky top-0 bg-white">
             <div className="logoContainer">
@@ -21,17 +16,11 @@ const Header = () => {
             </div>
             <div className="flex">
                 <ul className="flex space-x-6 m-4 text-orange-600 text-[18px] font-Montserrat pr-16">
-                    {/* <li>Online:{onlineStatus?"🟢":"🔴"}</li> */}
-                    <li><Link to="/" className={activeLink === "Home" ? "font-bold" : ""} onClick={()=>handleNavLinkClick("Home")}>Home</Link></li>
-                    <li><Link to="/restaurants" className={activeLink === "Restaurants" ? "font-bold" : ""} onClick={()=>handleNavLinkClick("Restaurants")}>Restaurants</Link></li>
-                    <li><Link to="/about" className={activeLink === "About" ? "font-bold" : ""} onClick={()=>handleNavLinkClick("About")}>About Us</Link></li>
-                    <li><Link to="/contact" className={activeLink === "Contact" ? "font-bold" : ""}onClick={() => handleNavLinkClick("Contact")}>Contact Us</Link></li>
-                    {/* <li><Link to="/grocery">Grocery</Link></li> */}
-                    {/* <li><img width="20" src="https://img.icons8.com/pastel-glyph/64/fast-cart.png" alt="fast-cart" /></li> */}
-                    <li><Link to="/cart" className={activeLink === "Cart" ? "font-bold" : ""}onClick={() => handleNavLinkClick("Cart")}>Cart</Link></li>
-                    {/* <li><button onClick={()=>{
-                        btnName==="login"?setbtnName("logout"):setbtnName("login");
-                        }}>{btnName}</button></li> */}
+                    <li className={activeLink === "Home" ? "font-bold" : ""} onClick={() => handleNavLinkClick("Home")}><Link to="/" className={window.location.href==="http://localhost:1234/"? "font-bold" : ""}>Home</Link></li>
+                    <li className={activeLink === "Home" ? "font-bold" : ""} onClick={() => handleNavLinkClick("restaurants")}><Link to="/restaurants" className={window.location.href==="http://localhost:1234/retaurants"? "font-bold" : ""}>Restaurants</Link></li>
+                    <li className={activeLink === "Home" ? "font-bold" : ""} onClick={() => handleNavLinkClick("about")}><Link to="/about" className={window.location.href==="http://localhost:1234/about"? "font-bold" : ""}>About Us</Link></li>
+                    <li className={activeLink === "Home" ? "font-bold" : ""} onClick={() => handleNavLinkClick("contact")}><Link to="/contact" className={window.location.href==="http://localhost:1234/contact"? "font-bold" : ""}>Contact Us</Link></li>
+                    <li className={activeLink === "Home" ? "font-bold" : ""} onClick={() => handleNavLinkClick("cart")}><Link to="/cart" className={window.location.href==="http://localhost:1234/cart"? "font-bold" : ""}>Cart</Link></li>
                 </ul>
             </div>
         </div>
