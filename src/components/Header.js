@@ -1,10 +1,15 @@
 import { Link } from "react-router-dom";
 import logo from "../images/logo-cravings.png";
 import {useState} from "react";
+import { useContext } from "react";
+import UserContext from "./UserContext";
 
 
 const Header = () => {
     const [activeLink, setActiveLink] = useState("");
+
+    const data=useContext(UserContext);
+    console.log(data);
 
     const handleNavLinkClick = (linkName) => {
         setActiveLink(linkName);

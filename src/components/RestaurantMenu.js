@@ -16,23 +16,22 @@ const RestaurantMenu = () => {
         costForTwoMessage
     } = resInfo?.cards[2]?.card?.card?.info || {};
 
-    const { itemCards } = resInfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card ||resInfo?.cards[4].groupedCard.cardGroupMap.REGULAR.cards[1].card.card;
+    // const { itemCards } = resInfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card ||resInfo?.cards[4].groupedCard.cardGroupMap.REGULAR.cards[1].card.card;
     // const ss=resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
     // console.log(ss);
-    const categories=resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(c=>c.card?.card?.["@type"]==="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
-    // console.log(categories);
+    const categories=resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c)=>c.card?.card?.["@type"]==="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
+    //console.log(categories);
     return (
-        <div>
-            <h1>Menu</h1>
+        <div className="text-center">
             <h2>{name}</h2>
             <h2>{avgRating}</h2>
-            {/* <p>{costForTwoMessage}</p>
-            {itemCards && itemCards.length>0 && itemCards.map(items =><li key={items.card.info.id}>{items.card.info.name}</li>)} */}
-            {categories.map((category)=><RestaurantCategory data={category?.card?.card}/>)}
+            {/* {itemCards && itemCards.length>0 && itemCards.map(items =><li key={items.card.info.id}>{items.card.info.name}</li>)} */}
+            {/* {categories.map((category)=><RestaurantCategory data={category?.card?.card}/>)} */}
+            {/* {categories.map((category)=><RestaurantCategory data={category?.card?.card}/>)} */}
+            {categories.map((category)=><RestaurantCategory key={category?.card?.card?.title} data={category?.card?.card}/>)}
         </div>
     );
    
 
 }
 export default RestaurantMenu;
-
