@@ -8,8 +8,8 @@ import UserContext from "./UserContext";
 const Header = () => {
     const [activeLink, setActiveLink] = useState("");
 
-    const data=useContext(UserContext);
-    console.log(data);
+    // const data=useContext(UserContext);
+    // console.log(data);
 
     const handleNavLinkClick = (linkName) => {
         setActiveLink(linkName);

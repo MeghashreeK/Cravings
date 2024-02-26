@@ -7,17 +7,23 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
-import Shimmer from "./components/Shimmer";
 import Home from "./components/Home";
 import Cart from "./components/Cart";
+import UserContext from "./components/UserContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const Grocery = lazy(() => import("./components/Grocery"));
 const AppLayout = () => {
+
+const name="Megha";
+
     return (
         <div className="app">
             <Header />
             <Outlet />
+            <UserContext.Provider>
+                
+            </UserContext.Provider>
         </div>
     );
 };
