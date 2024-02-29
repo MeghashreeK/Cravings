@@ -1,19 +1,18 @@
 import { Link } from "react-router-dom";
 import logo from "../images/logo-cravings.png";
 import {useState} from "react";
-import { useContext } from "react";
-import UserContext from "./UserContext";
-
+import { useSelector } from "react-redux";
 
 const Header = () => {
     const [activeLink, setActiveLink] = useState("");
 
-    // const data=useContext(UserContext);
-    // console.log(data);
-
     const handleNavLinkClick = (linkName) => {
         setActiveLink(linkName);
     };
+
+    const cartItems=useSelector((store)=>store.cart.items);
+    console.log(cartItems);
+
     return (
         <div className="flex justify-between items-center shadow-lg sticky top-0 bg-white">
             <div className="logoContainer">
@@ -25,7 +24,7 @@ const Header = () => {
                     <li className={activeLink === "restaurants" ? "font-bold" : ""} onClick={() => handleNavLinkClick("restaurants")}><Link to="/restaurants" className={`hover:font-bold ${window.location.href==="http://localhost:1234/restaurants"? "font-bold" : ""}`}>Restaurants</Link></li>
                     <li className={activeLink === "about" ? "font-bold" : ""} onClick={() => handleNavLinkClick("about")}><Link to="/about" className={`hover:font-bold ${window.location.href==="http://localhost:1234/about"? "font-bold" : ""}`}>About Us</Link></li>
                     <li className={activeLink === "contact" ? "font-bold" : ""} onClick={() => handleNavLinkClick("contact")}><Link to="/contact" className={`hover:font-bold ${window.location.href==="http://localhost:1234/contact"? "font-bold" : ""}`}>Contact Us</Link></li>
-                    <li className={activeLink === "cart" ? "font-bold" : ""} onClick={() => handleNavLinkClick("cart")}><Link to="/cart" className={`hover:font-bold ${window.location.href==="http://localhost:1234/cart"? "font-bold" : ""}`}>Cart</Link></li>
+                    <li className={activeLink === "cart" ? "font-bold" : ""} onClick={() => handleNavLinkClick("cart")}><Link to="/cart" className={`hover:font-bold ${window.location.href==="http://localhost:1234/cart"? "font-bold" : ""}`}>Cart-({cartItems.length}Items)</Link></li>
                 </ul>
             </div>
         </div>
