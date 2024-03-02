@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 const Home = () => {
     return (
-        <div className="flex justify-between px-36">
+        <div className="flex justify-between px-36 items-center">
             <div className="flex flex-col gap-10 items-center">
                 <div className="flex flex-col items-center">
                     <h1 className="font-bold font-Dancing text-[150px] text-orange-600 ">Cravings</h1>
