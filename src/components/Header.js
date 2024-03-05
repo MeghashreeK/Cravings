@@ -25,6 +25,7 @@ const Header = () => {
                     <li className={activeLink === "about" ? "font-bold" : ""} onClick={() => handleNavLinkClick("about")}><Link to="/about" className={`hover:font-bold ${window.location.href==="http://localhost:1234/about"? "font-bold" : ""}`}>About Us</Link></li>
                     <li className={activeLink === "contact" ? "font-bold" : ""} onClick={() => handleNavLinkClick("contact")}><Link to="/contact" className={`hover:font-bold ${window.location.href==="http://localhost:1234/contact"? "font-bold" : ""}`}>Contact Us</Link></li>
                     <li className={activeLink === "cart" ? "font-bold" : ""} onClick={() => handleNavLinkClick("cart")}><Link to="/cart" className={`hover:font-bold ${window.location.href==="http://localhost:1234/cart"? "font-bold" : ""}`}>Cart-({cartItems.length}Items)</Link></li>
+                    <button>LogIn</button>
                 </ul>
             </div>
         </div>
