@@ -32,7 +32,7 @@ const Body = () => {
         <div className="flex flex-col gap-12">
             <div className="flex space-x-3 m-4 px-20 mt-10">
                 <div className="flex space-x-4 items-center"> 
-                    <input type="text" className="border border-black w-80 h-8 rounded-sm p-2" placeholder="Craving something? Search here!" value={searchText} onChange={(e) => {
+                    <input type="text" data-testid="inputBox" className="border border-black w-80 h-8 rounded-sm p-2" placeholder="Craving something? Search here!" value={searchText} onChange={(e) => {
                         setsearchText(e.target.value);
                     }} />
                     <button className="bg-orange-400 flex h-8 w-14 px-10 rounded-lg justify-center items-center" onClick={() => {

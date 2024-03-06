@@ -7,8 +7,6 @@ test("A button should be present",()=>{
 
   //Querying
   const inputs=screen.getAllByRole("textbox");
-  
-  console.log(inputs.length);//2
 
   //Assertion
   expect(inputs.length).toBe(2);
