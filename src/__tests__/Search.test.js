@@ -4,8 +4,7 @@ import Body from "../components/Body";
 import { act } from "react-dom/test-utils";
 import { BrowserRouter } from "react-router-dom";
 import "@testing-library/jest-dom";
-import MOCKs_DATA from "../mockData.js/resCardMock.json";
-import RestaurantCard from "../components/RestaurantCard";
+
 
 
 global.fetch = jest.fn(() => {
@@ -22,7 +21,6 @@ it("Should check the searching feature", async () => {
         render(
             <BrowserRouter>
                 <Body />
-                {/* <RestaurantCard resData={MOCKs_DATA}/> */}
             </BrowserRouter>
         );
 
@@ -48,24 +46,23 @@ it("Should check the searching feature", async () => {
 
 
 
-// it("Should check the top rated restaurant feature",async()=>{
-//     await act(async () => {
+it("Should check the top rated restaurant feature",async()=>{
+    await act(async () => {
 
-//         render(
-//             <BrowserRouter>
-//                 <Body />
-//                 <RestaurantCard resData={MOCKs_DATA}/>
-//             </BrowserRouter>
-//         );
+        render(
+            <BrowserRouter>
+                <Body />
+            </BrowserRouter>
+        );
 
-//     })
+    })
 
-//     const topRatedButton = screen.getByRole("button", { name: "Top Rated Restaurants" });
-//     expect(topRatedButton).toBeInTheDocument();
+    const topRatedButton = screen.getByRole("button", { name: "Top Rated Restaurants" });
+    expect(topRatedButton).toBeInTheDocument();
 
-//     fireEvent.click(topRatedButton);
+    fireEvent.click(topRatedButton);
 
-//     const topRatedResCard=screen.getAllByTestId("rescard");
-//     console.log(topRatedResCard.length);
-// })
+    const topRatedResCard=screen.getAllByTestId("rescard");
+    console.log(topRatedResCard.length);
+})
 
