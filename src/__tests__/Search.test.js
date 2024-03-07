@@ -15,6 +15,7 @@ global.fetch = jest.fn(() => {
     })
 })
 
+
 it("Should check the searching feature", async () => {
     await act(async () => {
 
@@ -25,10 +26,9 @@ it("Should check the searching feature", async () => {
         );
 
     })
-
+    
     const cardsBeforeSearch = screen.getAllByTestId("rescard");
-    // expect(cardsBeforeSearch.length).toBeGreaterThan(0);
-    console.log(cardsBeforeSearch.length);
+    expect(cardsBeforeSearch.length).toBe(9);
 
     const inputBox = screen.getByTestId("inputBox");
     expect(inputBox).toBeInTheDocument();
@@ -40,8 +40,7 @@ it("Should check the searching feature", async () => {
     fireEvent.click(searchButton);
 
     const cardsAfterSearch = screen.getAllByTestId("rescard");
-    // expect(cardsAfterSearch.length).toBeGreaterThan(0);
-    console.log(cardsAfterSearch.length);
+    expect(cardsAfterSearch.length).toBe(1);
 });
 
 
@@ -63,6 +62,6 @@ it("Should check the top rated restaurant feature",async()=>{
     fireEvent.click(topRatedButton);
 
     const topRatedResCard=screen.getAllByTestId("rescard");
-    console.log(topRatedResCard.length);
+    expect(topRatedResCard.length).toBe(2);
 })
 
