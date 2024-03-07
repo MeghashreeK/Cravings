@@ -22,11 +22,15 @@ it("Should check the searching feature", async () => {
         render(
             <BrowserRouter>
                 <Body />
-                <RestaurantCard resData={MOCKs_DATA}/>
+                {/* <RestaurantCard resData={MOCKs_DATA}/> */}
             </BrowserRouter>
         );
 
     })
+
+    const cardsBeforeSearch = screen.getAllByTestId("rescard");
+    // expect(cardsBeforeSearch.length).toBeGreaterThan(0);
+    console.log(cardsBeforeSearch.length);
 
     const inputBox = screen.getByTestId("inputBox");
     expect(inputBox).toBeInTheDocument();
@@ -34,9 +38,34 @@ it("Should check the searching feature", async () => {
     const searchButton = screen.getByRole("button", { name: "search" });
     expect(searchButton).toBeInTheDocument();
 
-    fireEvent.change(inputBox, { target: { value: "pizza" } });
+    fireEvent.change(inputBox, { target: { value: "Brik Oven - Original Sourdough Pizzas" } });
     fireEvent.click(searchButton);
 
     const cardsAfterSearch = screen.getAllByTestId("rescard");
+    // expect(cardsAfterSearch.length).toBeGreaterThan(0);
     console.log(cardsAfterSearch.length);
 });
+
+
+
+// it("Should check the top rated restaurant feature",async()=>{
+//     await act(async () => {
+
+//         render(
+//             <BrowserRouter>
+//                 <Body />
+//                 <RestaurantCard resData={MOCKs_DATA}/>
+//             </BrowserRouter>
+//         );
+
+//     })
+
+//     const topRatedButton = screen.getByRole("button", { name: "Top Rated Restaurants" });
+//     expect(topRatedButton).toBeInTheDocument();
+
+//     fireEvent.click(topRatedButton);
+
+//     const topRatedResCard=screen.getAllByTestId("rescard");
+//     console.log(topRatedResCard.length);
+// })
+

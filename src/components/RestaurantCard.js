@@ -2,6 +2,7 @@ import { CDN_URL } from "../utils/constants";
 
 const RestaurantCard = (props) => {
     const { resData } = props;
+    // console.log(resData);
     const {
         cloudinaryImageId,
         name,
@@ -40,4 +41,3 @@ export const withPromotedLabel=(RestaurantCard)=>{
 }
 
 export default RestaurantCard;
-

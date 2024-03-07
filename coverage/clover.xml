@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1709740202060" clover="3.2.0">
-  <project timestamp="1709740202061" name="All files">
+<coverage generated="1709795357250" clover="3.2.0">
+  <project timestamp="1709795357250" name="All files">
     <metrics statements="45" coveredstatements="40" conditionals="10" coveredconditionals="9" methods="19" coveredmethods="15" elements="74" coveredelements="64" complexity="0" loc="45" ncloc="45" packages="3" files="6" classes="6"/>
     <package name="components">
       <metrics statements="33" coveredstatements="30" conditionals="10" coveredconditionals="9" methods="14" coveredmethods="12"/>
@@ -26,7 +26,7 @@
         <line num="40" count="1" type="stmt"/>
         <line num="45" count="0" type="stmt"/>
         <line num="46" count="0" type="stmt"/>
-        <line num="51" count="18" type="stmt"/>
+        <line num="51" count="19" type="stmt"/>
       </file>
       <file name="Contact.js" path="C:\Cravings\Cravings\src\components\Contact.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -37,12 +37,12 @@
         <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="3" count="2" type="stmt"/>
         <line num="4" count="20" type="stmt"/>
-        <line num="11" count="20" type="stmt"/>
-        <line num="14" count="20" type="stmt"/>
+        <line num="12" count="20" type="stmt"/>
         <line num="15" count="20" type="stmt"/>
-        <line num="31" count="2" type="stmt"/>
-        <line num="32" count="4" type="stmt"/>
-        <line num="33" count="10" type="stmt"/>
+        <line num="16" count="20" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="33" count="4" type="stmt"/>
+        <line num="34" count="11" type="stmt"/>
       </file>
       <file name="Shimmer.js" path="C:\Cravings\Cravings\src\components\Shimmer.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
