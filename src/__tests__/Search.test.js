@@ -1,4 +1,4 @@
-import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { fireEvent, render, screen} from "@testing-library/react";
 import MOCK_DATA from "../mockData.js/searchMock.json"
 import Body from "../components/Body";
 import { act } from "react-dom/test-utils";

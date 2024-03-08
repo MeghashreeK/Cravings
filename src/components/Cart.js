@@ -23,7 +23,7 @@ const Cart = () => {
                     <Link to="/restaurants"><button className="border-2 font-Montserrat border-orange-400 text-orange-600 h-8 w-70 px-10 rounded-lg justify-center items-center hover:bg-orange-600 hover:text-white" >Add Your Favorite Food!</button></Link>
                 </div>) : (
                 <div>
-                    <button className="border-4" onClick={handleClearCart}>clear cart</button>
+                    <button className="border-4" onClick={handleClearCart}>Clear Cart</button>
                     <ItemList items={cartItems} showAddButton={false} cartButton={true} />
                 </div>
             )}
@@ -31,3 +31,6 @@ const Cart = () => {
     );
 }
 export default Cart;
+
+
+

@@ -24,7 +24,7 @@ const ItemList = ({ items, showAddButton = true, cartButton=false }) => {
 
     return (
         <div>
-            {items.map((item) => <div key={item.card.info.id}>
+            {items.map((item) => <div data-testid="foodItems" key={item.card.info.id}>
                 <div className="flex gap-10 pl-4 pr-4 mb-8">
                     <div className="flex flex-col items-start w-9/12">
                         <span>{item.card.info.name}</span>
