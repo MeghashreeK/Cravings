@@ -23,56 +23,7 @@ global.fetch = jest.fn(() => {
     )
 })
 
-// it("Should render restaurantmenu", async () => {
-
-//     await act(async () => {
-//         render(
-//             <BrowserRouter>
-//                 <Provider store={indexStore}>
-//                     <RestaurantMenu />
-//                     <Header />
-//                     <Cart />
-//                 </Provider>
-//             </BrowserRouter>
-//         );
-//     })
-
-
-//     const accordianHeader = screen.getByText("Veg Pizza (14)");
-//     expect(accordianHeader).toBeInTheDocument();
-
-//     fireEvent.click(accordianHeader);
-
-//     expect(screen.getAllByTestId("foodItems").length).toBe(14);
-
-//     const addButton = screen.getAllByRole("button", { name: "Add+" });
-//     const addButtonLength = addButton.length;
-//     expect(addButtonLength).toBe(14);
-
-//     fireEvent.click(addButton[1]);
-
-
-//     expect(screen.getByText("Cart-(1Items)")).toBeInTheDocument();
-
-//     fireEvent.click(addButton[3]);
-
-//     expect(screen.getByText("Cart-(2Items)")).toBeInTheDocument();
-
-//     expect(screen.getAllByTestId("foodItems").length).toBe(16);
-
-//     const clearCart = screen.getByText("Clear Cart");
-//     expect(clearCart).toBeInTheDocument();
-
-//     fireEvent.click(clearCart);
-
-//     expect(screen.getAllByTestId("foodItems").length).toBe(14);
-
-//     expect(screen.getByText("Looks like your cart is on a diet! Let's feed it with some delicious delights!")).toBeInTheDocument();
-
-
-// })
-
-it("Should select a accordian and open it", async () => {
+it("Should check the cart feature", async () => {
 
     await act(async () => {
         render(
@@ -86,98 +37,47 @@ it("Should select a accordian and open it", async () => {
         );
     })
 
+    //if accordian is present click and open it
     const accordianHeader = screen.getByText("Veg Pizza (14)");
+
     expect(accordianHeader).toBeInTheDocument();
 
     fireEvent.click(accordianHeader);
 
     expect(screen.getAllByTestId("foodItems").length).toBe(14);
 
-})
-
-it("Should check the add button", async () => {
-
-    await act(async () => {
-        render(
-            <BrowserRouter>
-                <Provider store={indexStore}>
-                    <RestaurantMenu />
-                    <Header />
-                    <Cart />
-                </Provider>
-            </BrowserRouter>
-        );
-    })
-
+    //check the whether add+ button is present & select a food item by clicking on it
     const addButton = screen.getAllByRole("button", { name: "Add+" });
+
     const addButtonLength = addButton.length;
-    // expect(addButtonLength).toBe(14);
-    console.log(addButtonLength);
+
+    expect(addButtonLength).toBe(14);
 
     fireEvent.click(addButton[1]);
 
+    //one item should be added on the header cart
     expect(screen.getByText("Cart-(1Items)")).toBeInTheDocument();
 
+    //select another food item
+    fireEvent.click(addButton[3]);
+
+    //two item should be added on the header cart
+    expect(screen.getByText("Cart-(2Items)")).toBeInTheDocument();
+
+    expect(screen.getAllByTestId("foodItems").length).toBe(16);
+
+    //clear cart feature
+    const clearCart = screen.getByText("Clear Cart");
+
+    expect(clearCart).toBeInTheDocument();
+
+    fireEvent.click(clearCart);
+
+    expect(screen.getAllByTestId("foodItems").length).toBe(14);
+
+    expect(screen.getByText("Looks like your cart is on a diet! Let's feed it with some delicious delights!")).toBeInTheDocument();
 })
 
-// it("Should check the add button", async () => {
 
-//     await act(async () => {
-//         render(
-//             <BrowserRouter>
-//                 <Provider store={indexStore}>
-//                     <RestaurantMenu />
-//                     <Header />
-//                     <Cart />
-//                 </Provider>
-//             </BrowserRouter>
-//         );
-//     })
-
-//     expect(screen.getByText("Cart-(2Items)")).toBeInTheDocument();
-
-//     expect(screen.getAllByTestId("foodItems").length).toBe(16);
-
-// })
-
-// it("Should check the clear cart feature", async () => {
-
-//     await act(async () => {
-//         render(
-//             <BrowserRouter>
-//                 <Provider store={indexStore}>
-//                     <RestaurantMenu />
-//                     <Header />
-//                     <Cart />
-//                 </Provider>
-//             </BrowserRouter>
-//         );
-//     })
-
-//     const clearCart = screen.getByText("Clear Cart");
-//     expect(clearCart).toBeInTheDocument();
-
-//     fireEvent.click(clearCart);
-
-//     expect(screen.getAllByTestId("foodItems").length).toBe(14);
-
-// })
-
-// it("Should check the clear cart feature", async () => {
-
-//     await act(async () => {
-//         render(
-//             <BrowserRouter>
-//                 <Provider store={indexStore}>
-//                     <RestaurantMenu />
-//                     <Header />
-//                     <Cart />
-//                 </Provider>
-//             </BrowserRouter>
-//         );
-//     })
-
-//     expect(screen.getByText("Looks like your cart is on a diet! Let's feed it with some delicious delights!")).toBeInTheDocument();
-// })
 
 
