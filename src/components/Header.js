@@ -45,8 +45,8 @@ const Header = () => {
                         <li className={activeLink === "about" ? "font-bold" : ""} onClick={() => handleNavLinkClick("about")}>
                             <Link to="/about" className={`hover:font-bold ${window.location.href === "http://localhost:1234/about" ? "font-bold" : ""}`}>About Us</Link>
                         </li>
-                        <li className={activeLink === "contact" ? "font-bold" : ""} onClick={() => handleNavLinkClick("contact")}>
-                            <Link to="/contact" className={`hover:font-bold ${window.location.href === "http://localhost:1234/contact" ? "font-bold" : ""}`}>Contact Us</Link>
+                        <li className={activeLink === "FAQ" ? "font-bold" : ""} onClick={() => handleNavLinkClick("FAQ")}>
+                            <Link to="/FAQ" className={`hover:font-bold ${window.location.href === "http://localhost:1234/FAQ" ? "font-bold" : ""}`}>FAQ</Link>
                         </li>
                         <li className={activeLink === "cart" ? "font-bold relative" : "relative"} onClick={() => handleNavLinkClick("cart")}>
                             <Link to="/cart" className={`hover:font-bold ${window.location.href === "http://localhost:1234/cart" ? "font-bold" : ""}`}><img className="w-8 h-8" src={cart} />
@@ -70,8 +70,8 @@ const Header = () => {
                     <li className={`activeLink === "about" ? "font-bold" : "" text-center`} onClick={() => handleNavLinkClick("about")}>
                         <Link to="/about" className={`hover:font-bold ${window.location.href === "http://localhost:1234/about" ? "font-bold" : ""}`}>About Us</Link>
                     </li>
-                    <li className={`activeLink === "contact" ? "font-bold" : "" text-center`} onClick={() => handleNavLinkClick("contact")}>
-                        <Link to="/contact" className={`hover:font-bold ${window.location.href === "http://localhost:1234/contact" ? "font-bold" : ""}`}>Contact Us</Link>
+                    <li className={`activeLink === "FAQ" ? "font-bold" : "" text-center`} onClick={() => handleNavLinkClick("FAQ")}>
+                        <Link to="/FAQ" className={`hover:font-bold ${window.location.href === "http://localhost:1234/FAQ" ? "font-bold" : ""}`}>FAQ</Link>
                     </li>
                     <li className={activeLink === "cart" ? "font-bold relative" : "relative"} onClick={() => handleNavLinkClick("cart")}>
                         <Link to="/cart" className={`hover:font-bold ${window.location.href === "http://localhost:1234/cart" ? "font-bold" : ""}`}><img className="w-8 h-8" src={cart} />
