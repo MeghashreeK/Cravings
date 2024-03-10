@@ -17,7 +17,7 @@ const Header = () => {
     const [isMenuOpen,setIsMenuOpen]=useState(false);
 
     const menuFunction=()=>{
-        setIsMenuOpen(true);
+        setIsMenuOpen(!isMenuOpen);
     }
 
     return (
@@ -30,17 +30,28 @@ const Header = () => {
                 <img className="w-7 h-7 mr-8 sm:hidden" src={menu} alt="menu--v1" />
             </div>
 
-            {isMenuOpen && (<div className="fixed top-0 right-0 w-3/4 h-full bg-white z-50">
-              <img className="w-7 h-7 m-5" src={back} alt="back"/>
+            {isMenuOpen && (<div className="fixed top-0 right-0 w-3/4 h-full bg-white z-50 sm:hidden">
 
-            </div>)}
-
-            <div className="hidden sm:flex">
-                <ul className="flex space-x-6 m-4 text-orange-600 text-[18px] font-Montserrat pr-16">
+              <img className="w-7 h-7 m-5 " src={back} alt="back" onClick={() => menuFunction()}/>
+              <div className="flex justify-center">
+                <ul className="flex flex-col font-Montserrat items-center gap-5 text-orange-600">
                     <li className={activeLink === "Home" ? "font-bold" : ""} onClick={() => handleNavLinkClick("Home")}><Link to="/" className={`hover:font-bold ${window.location.href === "http://localhost:1234/" ? "font-bold" : ""}`}>Home</Link></li>
                     <li className={activeLink === "restaurants" ? "font-bold" : ""} onClick={() => handleNavLinkClick("restaurants")}><Link to="/restaurants" className={`hover:font-bold ${window.location.href === "http://localhost:1234/restaurants" ? "font-bold" : ""}`}>Restaurants</Link></li>
                     <li className={activeLink === "about" ? "font-bold" : ""} onClick={() => handleNavLinkClick("about")}><Link to="/about" className={`hover:font-bold ${window.location.href === "http://localhost:1234/about" ? "font-bold" : ""}`}>About Us</Link></li>
                     <li className={activeLink === "contact" ? "font-bold" : ""} onClick={() => handleNavLinkClick("contact")}><Link to="/contact" className={`hover:font-bold ${window.location.href === "http://localhost:1234/contact" ? "font-bold" : ""}`}>Contact Us</Link></li>
+                    <li className={activeLink === "cart" ? "font-bold" : ""} onClick={() => handleNavLinkClick("cart")}><Link to="/cart" className={`hover:font-bold ${window.location.href === "http://localhost:1234/cart" ? "font-bold" : ""}`}>Cart-({cartItems.length}Items)</Link></li>
+                    <button>LogIn</button>
+                </ul>
+            </div>
+
+            </div>)}
+
+            <div className="hidden sm:flex">
+                <ul className="flex sm:text-[15px] space-x-6 m-4 text-orange-600 md:text-[18px] font-Montserrat pr-16">
+                    <li className={activeLink === "Home" ? "font-bold" : ""} onClick={() => handleNavLinkClick("Home")}><Link to="/" className={`hover:font-bold ${window.location.href === "http://localhost:1234/" ? "font-bold" : ""}`}>Home</Link></li>
+                    <li className={activeLink === "restaurants" ? "font-bold" : ""} onClick={() => handleNavLinkClick("restaurants")}><Link to="/restaurants" className={`hover:font-bold ${window.location.href === "http://localhost:1234/restaurants" ? "font-bold" : ""}`}>Restaurants</Link></li>
+                    <li className={`activeLink === "about" ? "font-bold" : "" text-center`} onClick={() => handleNavLinkClick("about")}><Link to="/about" className={`hover:font-bold ${window.location.href === "http://localhost:1234/about" ? "font-bold" : ""}`}>About Us</Link></li>
+                    <li className={`activeLink === "contact" ? "font-bold" : "" text-center`} onClick={() => handleNavLinkClick("contact")}><Link to="/contact" className={`hover:font-bold ${window.location.href === "http://localhost:1234/contact" ? "font-bold" : ""}`}>Contact Us</Link></li>
                     <li className={activeLink === "cart" ? "font-bold" : ""} onClick={() => handleNavLinkClick("cart")}><Link to="/cart" className={`hover:font-bold ${window.location.href === "http://localhost:1234/cart" ? "font-bold" : ""}`}>Cart-({cartItems.length}Items)</Link></li>
                     <button>LogIn</button>
                 </ul>
