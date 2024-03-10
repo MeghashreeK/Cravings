@@ -13,6 +13,8 @@ import UserContext from "./components/UserContext";
 import indexStore from "./utils/indexStore";
 import { Provider } from "react-redux";
 
+
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const Grocery = lazy(() => import("./components/Grocery"));
 const AppLayout = () => {
