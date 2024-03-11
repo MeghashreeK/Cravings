@@ -35,7 +35,7 @@ const Body = () => {
         <div className="flex flex-col min-h-screen sm:gap-12">
             <div className="flex justify-center mt-10 px-20 sm:space-x-3  m-4">
 
-                <div className="flex flex-col items-center px-5 space-x-4 sm:flex-row sm:justify-center">
+                <div className="flex flex-col items-center space-x-4 sm:flex-row sm:justify-center">
                     {/* input */}
                     <input type="text" data-testid="inputBox" className="border border-black mb-3 w-64 p-2 sm:w-80 rounded-sm sm:h-8 sm:mb-0" placeholder="Craving something? Search here!" value={searchText} onChange={(e) => {
                         setsearchText(e.target.value);
@@ -56,6 +56,28 @@ const Body = () => {
                     }}>Top Rated Restaurants
                 </button>
 
+                {/* Price Ascend button */}
+                <button className=" hidden sm:bg-orange-400 sm:flex sm:h-8 sm:w-70 sm:px-10 sm:rounded-lg sm:justify-center sm:items-center" onClick={
+                    () => {
+                        let sortedList = [...listOfRestaurant]
+            sortedList.sort(
+              (a,b) => Number(a.info.costForTwo.substr(1,4)) - Number(b.info.costForTwo.substr(1,4))
+            );
+            setfilteredRestaurant(sortedList);
+                    }}>Price Ascend
+                </button>
+
+                {/* Price Descend Button */}
+                <button className=" hidden sm:bg-orange-400 sm:flex sm:h-8 sm:w-70 sm:px-10 sm:rounded-lg sm:justify-center sm:items-center" onClick={
+                    () => {
+                        let sortedList = [...listOfRestaurant]
+            sortedList.sort(
+              (a,b) => Number(b.info.costForTwo.substr(1,4)) - Number(a.info.costForTwo.substr(1,4))
+            );
+            setfilteredRestaurant(sortedList);
+                    }}>Price Descend
+                </button>
+
             </div>
 
             <div className="flex flex-wrap justify-center sm:gap-5 w-50">
@@ -63,6 +85,8 @@ const Body = () => {
                     {restaurant.info.promoted ? <RestaurantCardPromoted resData={restaurant} /> : <RestaurantCard resData={restaurant} />}
                 </Link>)}
             </div>
+
+            {/* Footer */}
             <div className="flex bg-black h-32 justify-center items-center mt-auto sm:h-16">
                 <div className="flex gap-5 sm:gap-8">
                     <Link to="https://www.linkedin.com/in/meghashree-kunder-017166288/"><img className="w-8 h-8" src={linkedin} /></Link>

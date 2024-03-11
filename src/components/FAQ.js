@@ -6,10 +6,9 @@ const Contact = () => {
     return (
         <div className="flex flex-col gap-7 min-h-screen">
             <div className="flex-grow">
-                <h1>Contact</h1>
-                <input type="text" placeholder="name" className="border-2" />
-                <input type="text" placeholder="message" className="border-2" />
-                <button className="border-2 rounded-lg w-20">Submit</button>
+
+                
+
             </div>
 
             <div className="flex bg-black h-32 justify-center items-center sm:h-16">
