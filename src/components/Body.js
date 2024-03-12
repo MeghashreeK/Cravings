@@ -22,7 +22,7 @@ const Body = () => {
         // const data=await fetch("https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D12.96340%26lng%3D77.58550%26is-seo-homepage-enabled%3Dtrue%26page_type%3DDESKTOP_WEB_LISTING")
         const data = await fetch("https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D12.96340%26lng%3D77.58550%26is-seo-homepage-enabled%3Dtrue%26page_type%3DDESKTOP_WEB_LISTING")
         const json = await data.json();
-        // console.log(json);
+        console.log(json);
         setlistOfRestaurant(json.data.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || json.data.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setfilteredRestaurant(json.data.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || json.data.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     };
@@ -91,10 +91,10 @@ const Body = () => {
                 <div className="flex gap-5 sm:gap-8">
                     <Link to="https://www.linkedin.com/in/meghashree-kunder-017166288/"><img className="w-8 h-8" src={linkedin} /></Link>
                     <Link to="https://github.com/MeghashreeK"><img className="w-8 h-8" src={github} /></Link>
-                    <h2 className="text-white">kundermeghashree279@gmail.com</h2>
                 </div>
             </div>
         </div>
     );
 };
 export default Body;  
+

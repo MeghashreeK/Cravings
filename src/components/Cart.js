@@ -35,7 +35,6 @@ const Cart = () => {
                     <div className="flex gap-5 sm:gap-8">
                         <Link to="https://www.linkedin.com/in/meghashree-kunder-017166288/"><img className="w-8 h-8" src={linkedin} /></Link>
                         <Link to="https://github.com/MeghashreeK"><img className="w-8 h-8" src={github} /></Link>
-                        <h2 className="text-white">kundermeghashree279@gmail.com</h2>
                     </div>
                 </div>
 
