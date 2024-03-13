@@ -24,7 +24,7 @@ const FAQ = () => {
     return (
         <div className="flex flex-col p-5 h-screen">
             <div className="flex flex-col gap-5 ">
-                {faqData.slice(3,-12).map((data, index) => <div key={data.id} className={`flex flex-col ${index!==faqData.length - 16 ? 'border-b-2 border-b-gray-200' : ''} px-3 py-6`} onClick={() => showAnswer(index)}>
+                {faqData.slice(3,-1).map((data, index) => <div key={data.id} className={`flex flex-col ${index!==faqData.length - 4 ? 'border-b-2 border-b-gray-200' : ''} px-3 py-6`} onClick={() => showAnswer(index)}>
 
                     <div className="flex justify-between w-full font-Montserrat font-medium">
                         <h1>{data.title.replace(/Swiggy/gi, 'Cravings')}</h1>
