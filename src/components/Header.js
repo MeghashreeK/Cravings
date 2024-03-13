@@ -8,7 +8,6 @@ import cart from "../images/cart-cravings.png"
 
 const Header = () => {
     const [activeLink, setActiveLink] = useState("");
-
     const handleNavLinkClick = (linkName) => {
         setActiveLink(linkName);
     };
@@ -16,9 +15,13 @@ const Header = () => {
     const cartItems = useSelector((store) => store.cart.items);
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-
     const menuFunction = () => {
         setIsMenuOpen(!isMenuOpen);
+    }
+
+    const [filteroptions, setFilteredoptions] = useState(false);
+    const filterFunction = () => {
+        setFilteredoptions(!filteroptions);
     }
 
     return (
@@ -42,9 +45,52 @@ const Header = () => {
                         </li>
 
 
-                        <li className={activeLink === "restaurants" ? "font-bold" : ""} onClick={() => handleNavLinkClick("restaurants")}>
-                            <Link to="/restaurants" className={`hover:font-bold ${window.location.href === "http://localhost:1234/restaurants" ? "font-bold" : ""}`}>Restaurants</Link>
-                        </li>
+
+
+
+
+
+
+                        <div className={`flex ${filteroptions ? 'border border-orange-300' : ''} rounded-lg  justify-center`}>
+                            <div className="flex  flex-col gap-3">
+                                <div className="flex justify-center">
+                                    <li className={activeLink === "restaurants" ? "font-bold" : ""} onClick={() => { handleNavLinkClick("restaurants"); filterFunction(); }} >
+                                        <Link to="/restaurants" className={`hover:font-bold ${window.location.href === "http://localhost:1234/restaurants" ? "font-bold" : ""}`}>
+                                            Restaurants
+                                        </Link>
+                                    </li>
+                                </div>
+                                {
+                                    filteroptions && (<div className="flex flex-col px-5">
+                                        <div className="flex gap-2 items-center">
+                                            <input type="checkbox" id="topRatedCheckbox" className="appearance-none h-3 w-3 border-2 border-orange-300 rounded-md checked:bg-orange-600 checked:border-transparent" />
+                                            <label htmlFor="topRatedCheckbox">Top Rated Restaurants</label>
+                                        </div>
+
+                                        <div className="flex gap-2 items-center">
+                                            <input type="checkbox" id="topRatedCheckbox" className="appearance-none h-3 w-3 border-2 border-orange-300 rounded-md checked:bg-orange-600 checked:border-transparent" />
+                                            <label htmlFor="PriceAscendCheckbox">Price Ascend</label>
+                                        </div>
+
+                                        <div className="flex gap-2 items-center">
+                                            <input type="checkbox" id="topRatedCheckbox" className="appearance-none h-3 w-3 border-2 border-orange-300 rounded-md checked:bg-orange-600 checked:border-transparent" />
+                                            <label htmlFor="PriceDescendCheckbox">Price Descend</label>
+                                        </div>
+
+                                    </div>)
+                                }
+
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
 
                         <li className={activeLink === "about" ? "font-bold" : ""} onClick={() => handleNavLinkClick("about")}>
                             <Link to="/about" className={`hover:font-bold ${window.location.href === "http://localhost:1234/about" ? "font-bold" : ""}`}>About Us</Link>

@@ -29,27 +29,4 @@ const Home = () => {
 export default Home;
 
 
-// import delivery from "../images/delivery-cravings.png";
-// import { Link } from "react-router-dom";
 
-// const Home = () => {
-//     return (
-//         <div className="flex flex-col sm:flex-row justify-between px-4 sm:px-0 items-center">
-//             <div className="sm:mr-8 mb-8 sm:mb-0 text-center">
-//                 <h1 className="font-bold text-4xl sm:text-6xl text-orange-500 mb-4">Cravings</h1>
-//                 <h2 className="font-Montserrat text-xl sm:text-2xl text-orange-500 mb-4">Khao Jee Bharke!</h2>
-//                 <p className="font-Montserrat italic text-orange-500 mb-4">Delivering your desired food right to your doorstep.</p>
-//                 <Link to="/restaurants">
-//                     <button className="border-2 border-orange-400 text-orange-500 hover:bg-orange-600 hover:text-white py-2 px-6 rounded-lg">
-//                         Find Your Favorite Food!
-//                     </button>
-//                 </Link>
-//             </div>
-//             <div>
-//                 <img src={delivery} className="w-full sm:w-auto" alt="Delivery" />
-//             </div>
-//         </div>
-//     );
-// };
-
-// export default Home;
