@@ -59,7 +59,7 @@ const Body = () => {
                 {/* Price Ascend button */}
                 <button className=" hidden sm:bg-orange-400 sm:flex sm:h-8 sm:w-70 sm:px-10 sm:rounded-lg sm:justify-center sm:items-center" onClick={
                     () => {
-                        let sortedList = [...listOfRestaurant]
+                        let sortedList = [...filteredRestaurant]
             sortedList.sort(
               (a,b) => Number(a.info.costForTwo.substr(1,4)) - Number(b.info.costForTwo.substr(1,4))
             );
@@ -70,7 +70,7 @@ const Body = () => {
                 {/* Price Descend Button */}
                 <button className=" hidden sm:bg-orange-400 sm:flex sm:h-8 sm:w-70 sm:px-10 sm:rounded-lg sm:justify-center sm:items-center" onClick={
                     () => {
-                        let sortedList = [...listOfRestaurant]
+                        let sortedList = [...filteredRestaurant]
             sortedList.sort(
               (a,b) => Number(b.info.costForTwo.substr(1,4)) - Number(a.info.costForTwo.substr(1,4))
             );
