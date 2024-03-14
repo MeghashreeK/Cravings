@@ -69,7 +69,7 @@ const Header = () => {
             </div>)}
             {/* header for others */}
             <div className="hidden sm:flex">
-                <ul className="flex sm:text-[15px] space-x-6 m-4 text-orange-500 md:text-[18px] font-Montserrat pr-16">
+                <ul className="flex sm:text-[15px] space-x-6 m-4 text-orange-500 md:text-[18px] font-Montserrat pr-16 sm:items-center">
                     <li className={activeLink === "Home" ? "font-bold" : ""} onClick={() => handleNavLinkClick("Home")}>
                         <Link to="/" className={`hover:font-bold ${window.location.href === "http://localhost:1234/" ? "font-bold" : ""}`}>Home</Link>
                     </li>
