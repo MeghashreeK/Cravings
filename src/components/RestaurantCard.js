@@ -32,8 +32,8 @@ const RestaurantCard = (props) => {
 export const withPromotedLabel=(RestaurantCard)=>{
     return(props)=>{
         return(
-            <div >
-                <label className="absolute bg-green-700 rounded-md text-white px-1 mr-9 text-[12px]">Promoted</label>
+            <div className="relative z-[-1]">
+                <label className="absolute top-0 left-0 bg-green-700 rounded-md text-white px-1 mr-9 text-[12px]">Promoted</label>
                 <RestaurantCard {...props}/>
             </div>
         )
@@ -41,3 +41,6 @@ export const withPromotedLabel=(RestaurantCard)=>{
 }
 
 export default RestaurantCard;
+
+
+

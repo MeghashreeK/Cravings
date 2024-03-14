@@ -15,7 +15,7 @@ const FAQ = () => {
     useEffect(() => { fetchFaqData() }, []);
 
     const fetchFaqData = async () => {
-        const data = await fetch("https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Fsupport%2Fissues%2Ffaq%3F");
+        const data = await fetch("https://thingproxy.freeboard.io/fetch/https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Fsupport%2Fissues%2Ffaq%3F");
         const json = await data.json();
         console.log(json);
         setFaqData(json.data.issues.data);

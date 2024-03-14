@@ -43,7 +43,7 @@ const Body = () => {
     return listOfRestaurant.length === 0 ? <Shimmer /> : (
 
         <div className="flex flex-col min-h-screen sm:gap-12">
-            <div className="flex justify-center mt-10 px-20 sm:space-x-3  m-4">
+            <div className="flex justify-center mt-10 px-20 sm:space-x-3  m-4 md:flex-wrap md:gap-4">
 
                 <div className="flex flex-col items-center space-x-4 sm:flex-row sm:justify-center">
                     {/* input */}
@@ -57,7 +57,7 @@ const Body = () => {
                             setfilteredRestaurant(filteredRestaurants);
                         }}>search</button>
 
-                        <div className={` sm:hidden flex flex-col  items-center ${filterOptions ? 'border-2 border-orange-400 rounded-lg px-3 py-3' : ''}`} onClick={() => { handleEventFilter() }}>
+                        <div className={` md:hidden flex flex-col  items-center ${filterOptions ? 'border-2 border-orange-400 rounded-lg px-3 py-3' : ''}`} onClick={() => { handleEventFilter() }}>
                             <button className={`flex items-center justify-center ${filterOptions ? '' : 'border-2 border-orange-400  rounded-lg  w-14 px-10 h-8'}`}>
                                 filters
                             </button>
@@ -89,9 +89,9 @@ const Body = () => {
                         </div>
                     </div>
                 </div>
-
+                <div className="hidden md:flex gap-2">
                 {/* topratedbutton */}
-                <button className=" hidden sm:bg-orange-400 sm:flex sm:h-8 sm:w-70 sm:px-10 sm:rounded-lg sm:justify-center sm:items-center" onClick={
+                <button className=" hidden sm:bg-orange-400 sm:flex  sm:w-70 sm:px-10 sm:rounded-lg sm:justify-center sm:items-center" onClick={
                     () => {
                         let filteredList = listOfRestaurant.filter((res) => res.info.avgRating > 4.5);
                         setfilteredRestaurant(filteredList);
@@ -99,7 +99,7 @@ const Body = () => {
                 </button>
 
                 {/* Price Ascend button */}
-                <button className=" hidden sm:bg-orange-400 sm:flex sm:h-8 sm:w-70 sm:px-10 sm:rounded-lg sm:justify-center sm:items-center" onClick={
+                <button className=" hidden sm:bg-orange-400 sm:flex  sm:w-70 sm:px-10 sm:rounded-lg sm:justify-center sm:items-center" onClick={
                     () => {
                         let sortedList = [...filteredRestaurant]
                         sortedList.sort(
@@ -110,7 +110,7 @@ const Body = () => {
                 </button>
 
                 {/* Price Descend Button */}
-                <button className=" hidden sm:bg-orange-400 sm:flex sm:h-8 sm:w-70 sm:px-10 sm:rounded-lg sm:justify-center sm:items-center" onClick={
+                <button className=" hidden sm:bg-orange-400 sm:flex  sm:w-70 sm:px-10 sm:rounded-lg sm:justify-center sm:items-center" onClick={
                     () => {
                         let sortedList = [...filteredRestaurant]
                         sortedList.sort(
@@ -119,10 +119,11 @@ const Body = () => {
                         setfilteredRestaurant(sortedList);
                     }}>Price Descend
                 </button>
+                </div>
 
             </div>
 
-            <div className="flex flex-wrap justify-center sm:gap-5 w-50">
+            <div className="flex flex-wrap justify-center gap-5 px-2 sm:gap-5 w-50 md:px-5 md:gap-7">
                 {filteredRestaurant.map(restaurant => <Link key={restaurant.info.id} to={"/restaurant/" + restaurant.info.id}>
                     {restaurant.info.promoted ? <RestaurantCardPromoted resData={restaurant} /> : <RestaurantCard resData={restaurant} />}
                 </Link>)}

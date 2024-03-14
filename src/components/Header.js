@@ -27,7 +27,7 @@ const Header = () => {
     return (
         <div className="flex justify-between items-center shadow-lg sticky top-0 bg-white">
             <div className="logoContainer">
-                <img className="w-24 sm:w-36" src={logo} alt="logo" />
+            <Link to="/"><img className="w-24 sm:w-36" src={logo} alt="logo" /></Link>
             </div>
 
             <div onClick={() => menuFunction()}>
@@ -59,7 +59,9 @@ const Header = () => {
                                 <div className="absolute top-[-3px] left-4 bg-orange-500 rounded-full w-5 h-5 text-white text-xs flex items-center justify-center">{cartItems.length}</div>
                             </Link>
                         </li>
-                        <button>LogIn</button>
+                        <li className={activeLink === "login" ? "font-bold" : ""} onClick={() => handleNavLinkClick("login")}>
+                            <Link to="/login" className={`hover:font-bold ${window.location.href === "http://localhost:1234/login" ? "font-bold" : ""}`}>Login</Link>
+                        </li>
                     </ul>
                 </div>
 
@@ -84,10 +86,13 @@ const Header = () => {
                             <div className="absolute top-[-3px] left-4 bg-orange-500 rounded-full w-5 h-5 text-white text-xs flex items-center justify-center">{cartItems.length}</div>
                         </Link>
                     </li>
-                    <button>LogIn</button>
+                    <li className={activeLink === "login" ? "font-bold" : ""} onClick={() => handleNavLinkClick("login")}>
+                            <Link to="/login" className={`hover:font-bold ${window.location.href === "http://localhost:1234/login" ? "font-bold" : ""}`}>Login</Link>
+                        </li>
                 </ul>
             </div>
         </div>
     );
 };
 export default Header;
+

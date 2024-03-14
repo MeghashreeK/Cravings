@@ -12,6 +12,7 @@ import Cart from "./components/Cart";
 import UserContext from "./components/UserContext";
 import indexStore from "./utils/indexStore";
 import { Provider } from "react-redux";
+import Login from "./components/Login";
 
 
 
@@ -59,6 +60,10 @@ const AppRouter = createBrowserRouter([
             {
                 path: "/restaurant/:resId",
                 element: <RestaurantMenu />,
+            },
+            {
+                path: "/login",
+                element: <Login/>,
             }
         ],
         errorElement: <Error />
