@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "../images/logo-cravings.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import menu from "../images/menu.png";
 import back from "../images/back.png";
@@ -43,55 +43,11 @@ const Header = () => {
                         <li className={activeLink === "Home" ? "font-bold" : ""} onClick={() => handleNavLinkClick("Home")}>
                             <Link to="/" className={`hover:font-bold ${window.location.href === "http://localhost:1234/" ? "font-bold" : ""}`}>Home</Link>
                         </li>
-
-
-
-
-
-
-
-
-                        <div className={`flex ${filteroptions ? 'border border-orange-300' : ''} rounded-lg  justify-center`}>
-                            <div className="flex  flex-col gap-3">
-                                <div className="flex justify-center">
-                                    <li className={activeLink === "restaurants" ? "font-bold" : ""} onClick={() => { handleNavLinkClick("restaurants"); filterFunction(); }} >
-                                        <Link to="/restaurants" className={`hover:font-bold ${window.location.href === "http://localhost:1234/restaurants" ? "font-bold" : ""}`}>
-                                            Restaurants
-                                        </Link>
-                                    </li>
-                                </div>
-                                {
-                                    filteroptions && (<div className="flex flex-col px-5">
-                                        <div className="flex gap-2 items-center">
-                                            <input type="checkbox" id="topRatedCheckbox" className="appearance-none h-3 w-3 border-2 border-orange-300 rounded-md checked:bg-orange-600 checked:border-transparent" />
-                                            <label htmlFor="topRatedCheckbox">Top Rated Restaurants</label>
-                                        </div>
-
-                                        <div className="flex gap-2 items-center">
-                                            <input type="checkbox" id="topRatedCheckbox" className="appearance-none h-3 w-3 border-2 border-orange-300 rounded-md checked:bg-orange-600 checked:border-transparent" />
-                                            <label htmlFor="PriceAscendCheckbox">Price Ascend</label>
-                                        </div>
-
-                                        <div className="flex gap-2 items-center">
-                                            <input type="checkbox" id="topRatedCheckbox" className="appearance-none h-3 w-3 border-2 border-orange-300 rounded-md checked:bg-orange-600 checked:border-transparent" />
-                                            <label htmlFor="PriceDescendCheckbox">Price Descend</label>
-                                        </div>
-
-                                    </div>)
-                                }
-
-                            </div>
-                        </div>
-
-
-
-
-
-
-
-
-
-
+                        <li className={activeLink === "restaurants" ? "font-bold" : ""} onClick={() => { handleNavLinkClick("restaurants"); filterFunction(); }} >
+                            <Link to="/restaurants" className={`hover:font-bold ${window.location.href === "http://localhost:1234/restaurants" ? "font-bold" : ""}`}>
+                                Restaurants
+                            </Link>
+                        </li>
                         <li className={activeLink === "about" ? "font-bold" : ""} onClick={() => handleNavLinkClick("about")}>
                             <Link to="/about" className={`hover:font-bold ${window.location.href === "http://localhost:1234/about" ? "font-bold" : ""}`}>About Us</Link>
                         </li>
@@ -135,5 +91,3 @@ const Header = () => {
     );
 };
 export default Header;
-
-
