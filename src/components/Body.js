@@ -6,9 +6,7 @@ import useOnlineStatus from "../customHooks.js/useOnlineStatus";
 import { withPromotedLabel } from "./RestaurantCard";
 import linkedin from "../images/linkedin-logo.png";
 import github from "../images/github-logo.png";
-
-
-
+import Login from "./Login";
 
 
 const Body = () => {
@@ -52,7 +50,7 @@ const Body = () => {
                     }} />
                     <div className="flex gap-2">
                         {/* search */}
-                        <button className="bg-orange-400 flex rounded-lg justify-center items-center w-14 px-10 h-8" onClick={() => {
+                        <button className="bg-orange-500 text-black flex rounded-lg justify-center items-center w-14 px-10 h-8" onClick={() => {
                             const filteredRestaurants = listOfRestaurant.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()));
                             setfilteredRestaurant(filteredRestaurants);
                         }}>search</button>
@@ -90,35 +88,35 @@ const Body = () => {
                     </div>
                 </div>
                 <div className="hidden md:flex gap-2">
-                {/* topratedbutton */}
-                <button className=" hidden sm:bg-orange-400 sm:flex  sm:w-70 sm:px-10 sm:rounded-lg sm:justify-center sm:items-center" onClick={
-                    () => {
-                        let filteredList = listOfRestaurant.filter((res) => res.info.avgRating > 4.5);
-                        setfilteredRestaurant(filteredList);
-                    }}>Top Rated Restaurants
-                </button>
+                    {/* topratedbutton */}
+                    <button className=" hidden sm:bg-orange-500 sm:flex sm:text-black  sm:w-70 sm:px-10 sm:rounded-lg sm:justify-center sm:items-center" onClick={
+                        () => {
+                            let filteredList = listOfRestaurant.filter((res) => res.info.avgRating > 4.5);
+                            setfilteredRestaurant(filteredList);
+                        }}>Top Rated Restaurants
+                    </button>
 
-                {/* Price Ascend button */}
-                <button className=" hidden sm:bg-orange-400 sm:flex  sm:w-70 sm:px-10 sm:rounded-lg sm:justify-center sm:items-center" onClick={
-                    () => {
-                        let sortedList = [...filteredRestaurant]
-                        sortedList.sort(
-                            (a, b) => Number(a.info.costForTwo.substr(1, 4)) - Number(b.info.costForTwo.substr(1, 4))
-                        );
-                        setfilteredRestaurant(sortedList);
-                    }}>Price Ascend
-                </button>
+                    {/* Price Ascend button */}
+                    <button className=" hidden sm:bg-orange-500 sm:flex sm:text-black   sm:w-70 sm:px-10 sm:rounded-lg sm:justify-center sm:items-center" onClick={
+                        () => {
+                            let sortedList = [...filteredRestaurant]
+                            sortedList.sort(
+                                (a, b) => Number(a.info.costForTwo.substr(1, 4)) - Number(b.info.costForTwo.substr(1, 4))
+                            );
+                            setfilteredRestaurant(sortedList);
+                        }}>Price Ascend
+                    </button>
 
-                {/* Price Descend Button */}
-                <button className=" hidden sm:bg-orange-400 sm:flex  sm:w-70 sm:px-10 sm:rounded-lg sm:justify-center sm:items-center" onClick={
-                    () => {
-                        let sortedList = [...filteredRestaurant]
-                        sortedList.sort(
-                            (a, b) => Number(b.info.costForTwo.substr(1, 4)) - Number(a.info.costForTwo.substr(1, 4))
-                        );
-                        setfilteredRestaurant(sortedList);
-                    }}>Price Descend
-                </button>
+                    {/* Price Descend Button */}
+                    <button className=" hidden sm:bg-orange-500 sm:flex sm:text-black  sm:w-70 sm:px-10 sm:rounded-lg sm:justify-center sm:items-center" onClick={
+                        () => {
+                            let sortedList = [...filteredRestaurant]
+                            sortedList.sort(
+                                (a, b) => Number(b.info.costForTwo.substr(1, 4)) - Number(a.info.costForTwo.substr(1, 4))
+                            );
+                            setfilteredRestaurant(sortedList);
+                        }}>Price Descend
+                    </button>
                 </div>
 
             </div>
@@ -140,4 +138,7 @@ const Body = () => {
     );
 };
 export default Body;
+
+
+
 

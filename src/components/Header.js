@@ -4,7 +4,8 @@ import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import menu from "../images/menu.png";
 import back from "../images/back.png";
-import cart from "../images/cart-cravings.png"
+import cart from "../images/cart-cravings.png";
+import Login from "./Login";
 
 const Header = () => {
     const [activeLink, setActiveLink] = useState("");
@@ -23,7 +24,7 @@ const Header = () => {
     const filterFunction = () => {
         setFilteredoptions(!filteroptions);
     }
-
+ 
     return (
         <div className="flex justify-between items-center shadow-lg sticky top-0 bg-white">
             <div className="logoContainer">

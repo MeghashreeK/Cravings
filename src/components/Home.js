@@ -2,9 +2,12 @@ import delivery from "../images/delivery-cravings.png";
 import {Link} from "react-router-dom";
 
 
+
+
 const Home = () => {
     return (
         <div className="flex justify-center items-center flex-wrap p-5 sm:px-36 sm:justify-between md:justify-center xl1:justify-between">
+         
             <div className="flex flex-col justify-center items-center gap-7 sm:gap-10">
 
                 <div className="flex flex-col justify-center text-center items-center">

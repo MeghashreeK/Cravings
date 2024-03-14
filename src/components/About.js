@@ -10,7 +10,6 @@ const About = () => {
 
             <div className="flex flex-col flex-grow px-5 justify-center items-center mt-2 ">
                 <div className="flex gap-8">
-                    <img className="w-4/12 border-8 border-orange-500 rounded-[50%] hidden sm:block md:hidden xl:block" src={resimage} alt="food image" />
                     <div className="flex flex-col gap-5 justify-center">
                         <h1 className="text-6xl font-Dancing font-bold text-orange-500">Anytime, Anywhere..</h1>
                         <p className=" text-[14px] sm:text-lg font-Montserrat">Welcome to 𝐂𝐫𝐚𝐯𝐢𝐧𝐠𝐬, where our journey began with a passion for revolutionizing the way people experience food. Established in 𝟐𝟎𝟎𝟐,
@@ -26,6 +25,8 @@ const About = () => {
                             We invite you to join us on this culinary adventure and discover why we're more than just a food delivery app, we're a partner in creating memorable dining experiences and we're always here to serve you.
                         </p>
                     </div>
+                    <img className="w-4/12 border-8 border-orange-500 rounded-[50%] hidden sm:block md:hidden xl:block" src={resimage} alt="food image" />
+
                 </div>
             </div>
 
