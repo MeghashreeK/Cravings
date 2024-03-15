@@ -19,7 +19,7 @@ const About = () => {
                             With a diverse range of restaurant partners, we offer a culinary journey that celebrates the flavors of local and international cuisines.
                             Powered by cutting-edge technology and innovation, our platform provides seamless ordering experiences and personalized recommendations.
                         </p>
-                        <p className="text-[14px] sm:text-lg  font-Montserrat">Beyond business, we are dedicated to social responsibility, actively 𝐬𝐮𝐩𝐩𝐨𝐫𝐭𝐢𝐧𝐠 𝐥𝐨𝐜𝐚𝐥 𝐜𝐨𝐦𝐦𝐮𝐧𝐢𝐭𝐢𝐞𝐬 and 𝐩𝐫𝐨𝐦𝐨𝐭𝐢𝐧𝐠 𝐬𝐮𝐬𝐭𝐚𝐢𝐧𝐚𝐛𝐥𝐞 𝐩𝐫𝐚𝐜𝐭𝐢𝐜𝐞𝐬.
+                        <p className="text-[14px] mb-5 sm:text-lg  font-Montserrat">Beyond business, we are dedicated to social responsibility, actively 𝐬𝐮𝐩𝐩𝐨𝐫𝐭𝐢𝐧𝐠 𝐥𝐨𝐜𝐚𝐥 𝐜𝐨𝐦𝐦𝐮𝐧𝐢𝐭𝐢𝐞𝐬 and 𝐩𝐫𝐨𝐦𝐨𝐭𝐢𝐧𝐠 𝐬𝐮𝐬𝐭𝐚𝐢𝐧𝐚𝐛𝐥𝐞 𝐩𝐫𝐚𝐜𝐭𝐢𝐜𝐞𝐬.
                             Our team is composed of industry experts and passionate individuals who drive our vision forward with creativity and dedication.
                             But don't just take our word for it, hear from our satisfied customers and restaurant partners who have experienced the Cravings difference firsthand.
                             We invite you to join us on this culinary adventure and discover why we're more than just a food delivery app, we're a partner in creating memorable dining experiences and we're always here to serve you.
