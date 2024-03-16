@@ -12,7 +12,7 @@ handleClick=()=>{
 
     return( 
         <div className="flex justify-center">
-        <div className="m-5 border-2 border-b-slate-100 w-6/12">
+        <div className="m-5 border-2 border-b-slate-100 w-6/12 ">
             <div className="flex justify-between py-5" onClick={handleClick}>
             <span className="px-3 font-bold">{data.title} ({data.itemCards.length})</span>
             <span className="px-3">⬇️</span>

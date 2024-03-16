@@ -23,7 +23,7 @@ const Body = () => {
         const data = await fetch("https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.96340&lng=77.58550&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
 
         const json = await data.json();
-        console.log(json);
+        // console.log(json);
         setlistOfRestaurant(json.data.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || json.data.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setfilteredRestaurant(json.data.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || json.data.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     };
@@ -35,7 +35,6 @@ const Body = () => {
     const [filterOptions, setFilterOptions] = useState(false);
     const handleEventFilter = () => {
         setFilterOptions(!filterOptions);
-        console.log("hey");
     }
 
     return listOfRestaurant.length === 0 ? <Shimmer /> : (
