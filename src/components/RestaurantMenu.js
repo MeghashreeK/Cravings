@@ -26,7 +26,7 @@ const RestaurantMenu = () => {
 
     const categories = resInfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c) => c.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory") || resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c) => c.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
     return (
-        <div className="mb-2 px-2  text-[10px] sm:text-[14px] sm:px-0">
+        <div className="mb-2 px-2 sm:px-0">
             <div className="flex justify-center mt-5 flex-wrap">
                 <div className="flex justify-between border-b-2 sm:w-6/12 sm:px-4">
                     <div className="flex flex-col gap-2 mb-2">

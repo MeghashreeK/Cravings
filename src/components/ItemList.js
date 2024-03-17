@@ -27,12 +27,12 @@ const ItemList = ({ items, showAddButton = true, cartButton = false}) => {
     return (
         <div>
             {items.map((item) => <div data-testid="foodItems" key={item.card.info.id}>
-                <div className="flex gap-10 pl-4 pr-4 mb-8">
+                <div className="flex gap-10 pl-4 pr-4 mb-8 border-b-2">
                     <div className="flex flex-col items-start w-9/12 gap-1">
                     <span>{item.card.info.itemAttribute.vegClassifier==="VEG" ? <img className="h-5 w-5" src={veg} alt="veg"/> : <img className="h-5 w-5" src={nonveg} alt="veg"/> }</span>
                         <span>{item.card.info.name}</span>
                         <span> ₹{((item.card.info.price || item.card.info.defaultPrice) / 100) * quantity}</span>
-                        <p className="text-gray-400 text-left">{item.card.info.description}</p>
+                        <p className="text-gray-400 text-left mb-2">{item.card.info.description}</p>
                     </div>
                     <div className="w-3/12 flex flex-col items-center" >
                         <img className="object-cover h-28 w-36 rounded-lg" src={CDN_URL + item.card.info.imageId} />
