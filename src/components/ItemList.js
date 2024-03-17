@@ -1,24 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { addItem } from "../utils/cartSlice";
 import { CDN_URL } from "../utils/constants";
 import { useDispatch } from "react-redux";
+import veg from "../images/veg.png";
+import nonveg from "../images/nonveg.png";
 
 
-const ItemList = ({ items, showAddButton = true, cartButton=false }) => {
+const ItemList = ({ items, showAddButton = true, cartButton = false}) => {
     const dispatch = useDispatch();
     const handleAddItem = (item) => {
         dispatch(addItem(item));
     }
-    const [quantity,setQuantity]=useState([1]);
-    const [price,setPrice]=useState([]);
+    const [quantity, setQuantity] = useState([1]);
+    const [price, setPrice] = useState([]);
 
-    const addQuantity=()=>{
+    const addQuantity = () => {
         setQuantity(parseInt(quantity) + 1);
     }
 
-    const subQuantity=()=>{
-        if(quantity>0){
-        setQuantity(parseInt(quantity) - 1);
+    const subQuantity = () => {
+        if (quantity > 0) {
+            setQuantity(parseInt(quantity) - 1);
         }
     }
 
@@ -26,9 +28,10 @@ const ItemList = ({ items, showAddButton = true, cartButton=false }) => {
         <div>
             {items.map((item) => <div data-testid="foodItems" key={item.card.info.id}>
                 <div className="flex gap-10 pl-4 pr-4 mb-8">
-                    <div className="flex flex-col items-start w-9/12">
+                    <div className="flex flex-col items-start w-9/12 gap-1">
+                    <span>{item.card.info.itemAttribute.vegClassifier==="VEG" ? <img className="h-5 w-5" src={veg} alt="veg"/> : <img className="h-5 w-5" src={nonveg} alt="veg"/> }</span>
                         <span>{item.card.info.name}</span>
-                        <span> ₹{((item.card.info.price || item.card.info.defaultPrice) / 100)*quantity}</span>
+                        <span> ₹{((item.card.info.price || item.card.info.defaultPrice) / 100) * quantity}</span>
                         <p className="text-gray-400 text-left">{item.card.info.description}</p>
                     </div>
                     <div className="w-3/12 flex flex-col items-center" >
@@ -38,10 +41,9 @@ const ItemList = ({ items, showAddButton = true, cartButton=false }) => {
                     </div>
                 </div>
             </div>)}
-
-
-
         </div>
+
     );
 }
 export default ItemList;
+
