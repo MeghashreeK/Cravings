@@ -18,6 +18,7 @@ const getArrowData=(data)=>{
     setArrow(data);
 }
 
+
     return( 
         <div className="flex justify-center mt-2 sm:mt-0 ">
         <div className="w-full border-2 border-b-slate-100 sm:w-6/12 sm:m-5 ">
@@ -30,11 +31,7 @@ const getArrowData=(data)=>{
            {showItems && <ItemList items={data.itemCards} getArrowData={(data) => getArrowData(data)} index={showIndex}/>}
         </div>
         </div>
-       
-           
-     
-        
-        
+    
     );
 }
 export default RestaurantCategory;
