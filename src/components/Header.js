@@ -15,7 +15,8 @@ const Header = () => {
     };
 
     const cartItems = useSelector((store) => store.cart.items);
-console.log("it",cartItems)
+    console.log("it",cartItems);
+    
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const menuFunction = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -25,8 +26,7 @@ console.log("it",cartItems)
     const filterFunction = () => {
         setFilteredoptions(!filteroptions);
     }
-   const data=cartItems.filter((data)=>data.count && data.count>0)
-   console.log("le",data)
+
     return (
         <div className="flex justify-between items-center shadow-lg sticky top-0 bg-white">
             <div className="logoContainer">
@@ -59,7 +59,7 @@ console.log("it",cartItems)
                         </li>
                         <li className={activeLink === "cart" ? "font-bold relative" : "relative"} onClick={() => handleNavLinkClick("cart")}>
                             <Link to="/cart" className={`hover:font-bold ${window.location.href === "http://localhost:1234/cart" ? "font-bold" : ""}`}><img className="w-8 h-8" src={cart} />
-                                <div className="absolute top-[-3px] left-4 bg-orange-500 rounded-full w-5 h-5 text-white text-xs flex items-center justify-center">{cartItems.filter((data)=>data.card.count && data.card.count>0).length}</div>
+                                <div className="absolute top-[-3px] left-4 bg-orange-500 rounded-full w-5 h-5 text-white text-xs flex items-center justify-center">{cartItems.length}</div>
                             </Link>
                         </li>
                         <li className={activeLink === "login" ? "font-bold" : ""} onClick={() => handleNavLinkClick("login")}>
@@ -86,7 +86,7 @@ console.log("it",cartItems)
                     </li>
                     <li className={activeLink === "cart" ? "font-bold relative" : "relative"} onClick={() => handleNavLinkClick("cart")}>
                         <Link to="/cart" className={`hover:font-bold ${window.location.href === "http://localhost:1234/cart" ? "font-bold" : ""}`}><img className="w-8 h-8" src={cart} />
-                            <div className="absolute top-[-3px] left-4 bg-orange-500 rounded-full w-5 h-5 text-white text-xs flex items-center justify-center">{cartItems.filter((data)=>data.count && data.count>0).length}</div>
+                            <div className="absolute top-[-3px] left-4 bg-orange-500 rounded-full w-5 h-5 text-white text-xs flex items-center justify-center">{cartItems.length}</div>
                         </Link>
                     </li>
                     <li className={activeLink === "login" ? "font-bold" : ""} onClick={() => handleNavLinkClick("login")}>
