@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 
 const Home = () => {
     return (
-        <div className="flex justify-center items-center flex-wrap p-5 sm:px-36 sm:justify-between md:justify-center md:mt-16 xl1:justify-between">
+        <div className="flex justify-center items-center flex-wrap p-5 sm:px-36 sm:justify-between md:justify-center mt-12 md:mt-16 xl1:justify-between">
          
             <div className="flex flex-col justify-center items-center gap-7 sm:gap-10">
 
