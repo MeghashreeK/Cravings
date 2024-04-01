@@ -11,17 +11,7 @@ const Cart = () => {
     const handleClearCart = () => {
         dispatch(clearCart());
     }
-    // const subQuantity = (itemid) => {
-    //     if(quantity[itemid]>1){
-    //     setQuantity(prevState=>{
-    //         const newState={...prevState};
-    //         newState[itemid]=prevState[itemid]-1;
-    //         return newState;
-    //     })}
-    //     else if(quantity[itemid]==1){
-    //         setCartButton(false);
-    //     }
-    // }
+    
     const handleAddItem = (item) => {
     
         const index = cartItems.findIndex(innerData => innerData.card.info.id === item.card.info.id);
