@@ -65,9 +65,9 @@ const ItemList = ({ items }) => {
 
     return (
         <div>
-            {itemState.map((item) => <div data-testid="foodItems" key={item.card.info.id}>
-                <div className="flex gap-10 pl-4 pr-4 mb-8 border-b-2">
-                    <div className="flex flex-col items-start w-9/12 gap-1">
+            {itemState.map((item,index) => <div data-testid="foodItems" key={item.card.info.id}>
+                <div className={`flex gap-10 pl-4 pr-4 mb-8 ${index === itemState.length - 1 ? '' : 'border-b-2'}`}>
+                    <div className="flex flex-col items-start w-9/12 gap-1 mb-8">
                         <span>{item.card.info.itemAttribute.vegClassifier === "VEG" ? <img className="h-5 w-5" src={veg} alt="veg" /> : <img className="h-5 w-5" src={nonveg} alt="veg" />}</span>
                         <span>{item.card.info.name}</span>
                         <span> ₹{((item.card.info.price || item.card.info.defaultPrice) / 100)}</span>

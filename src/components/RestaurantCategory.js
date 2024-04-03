@@ -21,7 +21,7 @@ const getArrowData=(data)=>{
 
     return( 
         <div className="flex justify-center mt-2 sm:mt-0 ">
-        <div className="w-full border-2 border-b-slate-100 sm:w-6/12 sm:m-5 ">
+        <div className="w-full border-2 sm:w-6/12 sm:m-5 ">
             <div className="flex justify-between py-5" onClick={handleClick}>
             <span className="px-3 font-bold">{data.title} ({data.itemCards.length})</span>
             <span className="px-3">
