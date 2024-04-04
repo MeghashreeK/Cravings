@@ -37,6 +37,15 @@ const Cart = () => {
             dispatch(removeItem(cartItems[index]))
         }
     }
+
+    const calculateTotalPrice = () => {
+        let totalPrice = 0;
+        cartItems.forEach(item => {
+            totalPrice += (item.card.info.price || item.card.info.defaultPrice) * item.count;
+        });
+        return totalPrice / 100; // Convert to rupees
+    }
+
     console.log(cartItems.length);
 
     return (
@@ -65,7 +74,7 @@ const Cart = () => {
                                         {item.count &&
                                             (<div className="border border-orange-400 px-2 rounded-lg text-center flex">
                                                 <button className="px-5" onClick={() => subQuantity(item)}>-</button>
-                                                {item.count}
+                                                {item.count} 
                                                 <button className="px-5" onClick={() => handleAddItem(item)}>+</button>
                                             </div>)}
 
@@ -76,7 +85,7 @@ const Cart = () => {
                             <h1 className="">Bill Details:</h1>
                             <div className="flex justify-between">
                                 <span>Item Total</span>
-                                <span>₹2796</span>
+                                <span>₹{calculateTotalPrice()}</span>
                             </div>
                             <div className="flex justify-between">
                                 <div className="flex gap-1 justify-center items-center">
@@ -100,14 +109,14 @@ const Cart = () => {
                                 <div className="flex justify-center items-center mb-2 gap-1">
                                     <h1>GST & Restaurant Charges</h1>
                                 </div>
-                                <h1>₹42.57</h1>
+                                <h1>₹42</h1>
                             </div>
                             <div className="flex justify-between">
                                 <span>Total</span>
-                                <span>₹490.57</span>
+                                <span>₹{calculateTotalPrice() + 40 + 4 + 42}</span>
                             </div>
                             <div className="flex gap-5">
-                                <button className="bg-orange-500 px-2 rounded-lg hover:bg-orange-400 mb-5">Pay Now</button>
+                                <Link to="/login"><button className="bg-orange-500 px-2 rounded-lg hover:bg-orange-400 mb-5">Pay Now</button></Link>
                                 <button className="bg-orange-500 px-2 rounded-lg hover:bg-orange-400 mb-5" onClick={handleClearCart}>Clear Cart</button>
                             </div>
                         </div>
