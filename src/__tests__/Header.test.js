@@ -7,6 +7,10 @@ import "@testing-library/jest-dom";
 
 
 jest.mock('../images/logo-cravings.png', () => 'logo-cravings.png');
+jest.mock("../images/menu.png", () => "menu.png");
+jest.mock("../images/back.png", () => "back.png");
+jest.mock("../images/cart-cravings.png", () => "cart-cravings.png");
+
 it("Should render header",()=>{
     render(
         <BrowserRouter>
@@ -16,7 +20,7 @@ it("Should render header",()=>{
     </BrowserRouter>
     );
     
-    expect(screen.getByText("Cart-(0Items)")).toBeInTheDocument();
+    expect(screen.getByText("0")).toBeInTheDocument();
     
 
 });

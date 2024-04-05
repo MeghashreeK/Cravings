@@ -6,6 +6,8 @@ import { BrowserRouter } from "react-router-dom";
 import "@testing-library/jest-dom";
 
 
+jest.mock("../images/linkedin-logo.png", () => "linkedin-logo.png");
+jest.mock("../images/github-logo.png", () => "github-logo");
 
 global.fetch = jest.fn(() => {
     return Promise.resolve({

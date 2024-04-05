@@ -10,8 +10,21 @@ import Header from "../components/Header";
 import Cart from "../components/Cart";
 
 
-
+//header
 jest.mock("../images/logo-cravings.png", () => "logo-cravings.png");
+jest.mock("../images/menu.png", () => "menu.png");
+jest.mock("../images/back.png", () => "back.png");
+jest.mock("../images/cart-cravings.png", () => "cart-cravings.png");
+
+//RestaurantMenu
+jest.mock("../images/greenstar.png", () => "greenstar.png");
+
+//Cart
+jest.mock("../images/veg.png", () => "veg.png");
+jest.mock("../images/nonveg.png", () => "nonveg.png");
+jest.mock("../images/linkedin-logo.png", () => "linkedin-logo.png");
+jest.mock("../images/github-logo.png", () => "github-logo.png");
+jest.mock("../images/information.png", () => "information.png");
 
 global.fetch = jest.fn(() => {
     return Promise.resolve(
@@ -56,13 +69,13 @@ it("Should check the cart feature", async () => {
     fireEvent.click(addButton[1]);
 
     //one item should be added on the header cart
-    expect(screen.getByText("Cart-(1Items)")).toBeInTheDocument();
+    expect(screen.getByText("1")).toBeInTheDocument();
 
     //select another food item
     fireEvent.click(addButton[3]);
 
     //two item should be added on the header cart
-    expect(screen.getByText("Cart-(2Items)")).toBeInTheDocument();
+    expect(screen.getByText("2")).toBeInTheDocument();
 
     expect(screen.getAllByTestId("foodItems").length).toBe(16);
 
