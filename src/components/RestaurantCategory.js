@@ -35,3 +35,4 @@ const getArrowData=(data)=>{
     );
 }
 export default RestaurantCategory;
+

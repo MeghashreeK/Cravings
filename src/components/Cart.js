@@ -8,7 +8,6 @@ import { addItem, removeItem } from "../utils/cartSlice";
 import { Link } from "react-router-dom";
 import linkedin from "../images/linkedin-logo.png";
 import github from "../images/github-logo.png";
-import { Link } from "react-router-dom";
 import info from "../images/information.png";
 
 const Cart = () => {
@@ -46,7 +45,7 @@ const Cart = () => {
         return totalPrice / 100; // Convert to rupees
     }
 
-    console.log(cartItems.length);
+    // console.log(cartItems.length);
 
     return (
         <div className="flex flex-col justify-center  items-center mt-5 min-h-screen ">
@@ -133,39 +132,3 @@ const Cart = () => {
     );
 }
 export default Cart;
-
-
-
-
-
-
-
-// return (
-//     <div>
-//         {cartItems.map((item) =>
-//             <div data-testid="foodItems" key={item.card.info.id}>
-//                 <div className="flex gap-10 pl-4 pr-4 mb-8 border-b-2">
-//                     <div className="flex flex-col items-start w-9/12 gap-1">
-//                         <span>{item.card.info.itemAttribute.vegClassifier === "VEG" ? <img className="h-5 w-5" src={veg} alt="veg" /> : <img className="h-5 w-5" src={nonveg} alt="veg" />}</span>
-//                         <span>{item.card.info.name}</span>
-//                         <span> ₹{((item.card.info.price || item.card.info.defaultPrice) / 100)}</span>
-//                         <p className="text-gray-400 text-left mb-2">{item.card.info.description}</p>
-//                     </div>
-//                     <div className="w-3/12 flex flex-col items-center" >
-//                         <img className="object-cover h-28 w-36 rounded-lg" src={CDN_URL + item.card.info.imageId} />
-//                         {!item.count && (<button className="border px-3 sm:px-5 rounded-lg bg-orange-400 " onClick={() => { handleAddItem(item) }}>Add+</button>)}
-
-//                         {item.count &&
-//                             (<div className="border border-orange-400 px-2 rounded-lg">
-//                                 <button className="px-5" onClick={() => subQuantity(item)}>-</button>
-//                                 {item.count}
-//                                 <button className="px-5" onClick={() => handleAddItem(item)}>+</button>
-//                             </div>)}
-
-//                     </div>
-//                 </div>
-//             </div>)}
-//     </div>
-// );
-// }
-// export default Cart;

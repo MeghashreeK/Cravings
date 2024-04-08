@@ -17,7 +17,6 @@ const Header = () => {
     const location = useLocation();
 
     const cartItems = useSelector((store) => store.cart.items);
-    console.log("it",cartItems);
     
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const menuFunction = () => {
