@@ -9,7 +9,6 @@ import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Home from "./components/Home";
 import Cart from "./components/Cart";
-import UserContext from "./components/UserContext";
 import indexStore from "./utils/indexStore";
 import { Provider } from "react-redux";
 import Login from "./components/Login";
@@ -17,7 +16,6 @@ import Login from "./components/Login";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-const Grocery = lazy(() => import("./components/Grocery"));
 const AppLayout = () => {
 
     const name = "Megha";
@@ -72,5 +70,4 @@ const AppRouter = createBrowserRouter([
 ])
 
 root.render(<RouterProvider router={AppRouter} />);
-
 
