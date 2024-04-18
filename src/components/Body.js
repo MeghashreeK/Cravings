@@ -1,6 +1,6 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
-import Shimmer from "./Shimmer";
+import ShimmerBody from "./ShimmerBody";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../customHooks.js/useOnlineStatus";
 import { withPromotedLabel } from "./RestaurantCard";
@@ -21,21 +21,21 @@ const Body = () => {
         const data = await fetch("https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.96340&lng=77.58550&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
 
         const json = await data.json();
-        // console.log(json);
         setlistOfRestaurant(json.data.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || json.data.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setfilteredRestaurant(json.data.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || json.data.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     };
-    const onlineStatus = useOnlineStatus();
-    if (onlineStatus === false) {
-        return <h1>offline</h1>
-    }
-
+    
     const [filterOptions, setFilterOptions] = useState(false);
     const handleEventFilter = () => {
         setFilterOptions(!filterOptions);
     }
 
-    return listOfRestaurant.length === 0 ? <Shimmer /> : (
+    const onlineStatus = useOnlineStatus();
+    if (onlineStatus === false) {
+        return <h1>offline</h1>
+    }
+
+    return listOfRestaurant.length === 0 ? <ShimmerBody /> : (
 
         <div className="flex flex-col min-h-screen sm:gap-12">
             <div className="flex justify-center mt-10 px-20 sm:space-x-3  m-4 md:flex-wrap md:gap-4">

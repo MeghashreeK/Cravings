@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Shimmer from "./Shimmer";
+// import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../customHooks.js/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
@@ -12,7 +12,7 @@ const RestaurantMenu = () => {
     const { resId } = useParams();
 
     const resInfo = useRestaurantMenu(resId);
-    if (!resInfo) return <Shimmer />;
+    // if (!resInfo) return <Shimmer />;
 
     const {
         name,
