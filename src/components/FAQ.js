@@ -1,6 +1,8 @@
 import downarrow from "../images/down-arrow.png";
 import { useEffect, useState } from "react";
 import uparrow from "../images/up-arrow.png";
+import ShimmerFAQ from "./ShimmerFAQ";
+
 const FAQ = () => {
     const [answer, setAnswer] = useState(false);
     const [indexOfBox, setIndexOfBox] = useState([0]);
@@ -21,7 +23,7 @@ const FAQ = () => {
         setFaqData(json.data.issues.data);
     }
 
-    return (
+    return faqData.length===0 ? <ShimmerFAQ/> : (
         <div className="flex flex-col p-5 h-screen">
             <div className="flex flex-col gap-5 ">
                 {faqData.slice(3,-1).map((data, index) => <div key={data.id} className={`flex flex-col ${index!==faqData.length - 4 ? 'border-b-2 border-b-gray-200' : ''} px-3 py-6`} onClick={() => showAnswer(index)}>
