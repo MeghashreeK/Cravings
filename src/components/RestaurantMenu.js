@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-// import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../customHooks.js/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
 import greenstar from "../images/greenstar.png";
+import ShimmerMenu from "./ShimmerMenu";
 
 
 const RestaurantMenu = () => {
@@ -12,7 +12,6 @@ const RestaurantMenu = () => {
     const { resId } = useParams();
 
     const resInfo = useRestaurantMenu(resId);
-    // if (!resInfo) return <Shimmer />;
 
 
     const {
@@ -30,16 +29,16 @@ const RestaurantMenu = () => {
         deliveryTime,
     } = resInfo?.cards[0]?.card?.card?.info?.sla || resInfo?.cards[2]?.card?.card?.info?.sla || resInfo?.cards[5]?.card?.card?.info?.sla || resInfo?.cards[4]?.card?.card?.info?.sla || {};
     const categories = resInfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c) => c.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory") || resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c) => c.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
-    console.log(categories);
+    // console.log(categories);
 
-    return (
+    return resInfo === null ? <ShimmerMenu/> : (
         <div className="mb-2 px-2 sm:px-0">
             <div className="flex justify-center mt-5 flex-wrap">
                 <div className="flex justify-between border-b-2 sm:w-6/12 sm:px-4">
                     <div className="flex flex-col gap-2 mb-2">
                         <p className="font-bold">{name}</p>
                         <div className="text-gray-400">
-                            <p>{cuisines}</p>
+                            <p>{cuisines.join(', ')}</p>
                             <p>{locality}</p>
                         </div>
                         <div className="flex gap-1 items-center text-gray-400">
