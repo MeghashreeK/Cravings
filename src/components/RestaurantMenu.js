@@ -34,7 +34,7 @@ const RestaurantMenu = () => {
     return resInfo === null ? <ShimmerMenu/> : (
         <div className="mb-2 px-2 sm:px-0">
             <div className="flex justify-center mt-5 flex-wrap">
-                <div className="flex justify-between border-b-2 sm:w-6/12 sm:px-4">
+                <div className="flex justify-between gap-2 border-b-2 sm:w-6/12 sm:px-4">
                     <div className="flex flex-col gap-2 mb-2">
                         <p className="font-bold">{name}</p>
                         <div className="text-gray-400">
