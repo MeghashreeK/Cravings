@@ -14,6 +14,7 @@ const RestaurantMenu = () => {
     const resInfo = useRestaurantMenu(resId);
     // if (!resInfo) return <Shimmer />;
 
+
     const {
         name,
         avgRating,
@@ -21,10 +22,16 @@ const RestaurantMenu = () => {
         locality,
         feeDetails,
         totalRatingsString
-    } = resInfo?.cards[0]?.card?.card?.info || resInfo?.cards[2]?.card?.card?.info || resInfo?.cards[5]?.card?.card?.info || {};
+    } = resInfo?.cards[0]?.card?.card?.info || resInfo?.cards[2]?.card?.card?.info || resInfo?.cards[5]?.card?.card?.info || resInfo?.cards[4]?.card?.card?.info || {};
 
 
+    const {
+        lastMileTravelString,
+        deliveryTime,
+    } = resInfo?.cards[0]?.card?.card?.info?.sla || resInfo?.cards[2]?.card?.card?.info?.sla || resInfo?.cards[5]?.card?.card?.info?.sla || resInfo?.cards[4]?.card?.card?.info?.sla || {};
     const categories = resInfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c) => c.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory") || resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c) => c.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
+    console.log(categories);
+
     return (
         <div className="mb-2 px-2 sm:px-0">
             <div className="flex justify-center mt-5 flex-wrap">
@@ -37,7 +44,7 @@ const RestaurantMenu = () => {
                         </div>
                         <div className="flex gap-1 items-center text-gray-400">
                             <img className="w-5 h-4" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_18,h_18/v1648635511/Delivery_fee_new_cjxumu" alt="rider" />
-                            <p>{feeDetails.message}</p>
+                            <p>{lastMileTravelString} | {deliveryTime} mins</p>
                         </div>
                     </div>
                     <div className="flex flex-col justify-center items-center border h-1/2 p-2">
@@ -54,7 +61,7 @@ const RestaurantMenu = () => {
 
                 </div>
             </div>
-            {categories.map((category, index) => <RestaurantCategory
+            {categories?.map((category, index) => <RestaurantCategory
                 key={category?.card?.card?.title}
                 showItems={index === showIndex && true}
                 setShowIndex={() => {
