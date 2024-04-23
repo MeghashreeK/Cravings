@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../customHooks.js/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
@@ -19,7 +19,6 @@ const RestaurantMenu = () => {
         avgRating,
         cuisines,
         locality,
-        feeDetails,
         totalRatingsString
     } = resInfo?.cards[0]?.card?.card?.info || resInfo?.cards[2]?.card?.card?.info || resInfo?.cards[5]?.card?.card?.info || resInfo?.cards[4]?.card?.card?.info || {};
 
@@ -68,7 +67,8 @@ const RestaurantMenu = () => {
                     else { setShowIndex(null) }
                 }}
                 data={category?.card?.card}
-                indexno={showIndex} />)}
+                indexno={showIndex} 
+                arrowData={false}/>)}
 
         </div>
     );
@@ -76,6 +76,5 @@ const RestaurantMenu = () => {
 
 }
 export default RestaurantMenu;
-
 
 
