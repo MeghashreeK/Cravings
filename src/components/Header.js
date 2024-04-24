@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 import menu from "../images/menu.png";
 import back from "../images/back.png";
 import cart from "../images/cart-cravings.png";
-import Login from "./Login";
 
 const Header = () => {
     const [activeLink, setActiveLink] = useState("");

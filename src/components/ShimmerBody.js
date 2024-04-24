@@ -2,7 +2,7 @@ const ShimmerBody = () => {
 
     return (
 
-        <div className="flex flex-col min-h-screen sm:gap-12 justify-center">
+        <div className="flex flex-col sm:gap-12 justify-center">
             {/* mobile screen */}
             <div className="md:hidden flex justify-center mt-10 px-20 sm:space-x-3  m-4 md:flex-wrap md:gap-4">
 
@@ -42,6 +42,14 @@ const ShimmerBody = () => {
                 <div className="bg-[#E5E2E0] flex rounded-xl justify-center items-center w-60 px-10 h-56"></div>
                 <div className="bg-[#E5E2E0] flex rounded-xl justify-center items-center w-60 px-10 h-56"></div>
                 <div className="bg-[#E5E2E0] flex rounded-xl justify-center items-center w-60 px-10 h-56"></div>
+                <div className="bg-[#E5E2E0] flex rounded-xl justify-center items-center w-60 px-10 h-56"></div>
+                <div className="bg-[#E5E2E0] flex rounded-xl justify-center items-center w-60 px-10 h-56"></div>
+                <div className="bg-[#E5E2E0] flex rounded-xl justify-center items-center w-60 px-10 h-56"></div>
+                <div className="bg-[#E5E2E0] flex rounded-xl justify-center items-center w-60 px-10 h-56"></div>
+                <div className="bg-[#E5E2E0] flex rounded-xl justify-center items-center w-60 px-10 h-56"></div>
+
+
+
 
             </div>
         </div>
