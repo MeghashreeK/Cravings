@@ -17,9 +17,6 @@ import Login from "./components/Login";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const AppLayout = () => {
-
-    const name = "Megha";
-
     return (
         <div className="app">
             <Provider store={indexStore}>
