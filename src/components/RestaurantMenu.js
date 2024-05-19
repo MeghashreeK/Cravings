@@ -37,7 +37,7 @@ const RestaurantMenu = () => {
                     <div className="flex flex-col gap-2 mb-2">
                         <p className="font-bold">{name}</p>
                         <div className="text-gray-400">
-                            <p>{cuisines.join(', ')}</p>
+                            {/* <p>{cuisines.join(', ')}</p> */}
                             <p>{locality}</p>
                         </div>
                         <div className="flex gap-1 items-center text-gray-400">
